@@ -1,0 +1,39 @@
+{
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "3030"
+    }
+  },
+  "name": "WhosJimmy",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "author": "Derek J",
+  "private": false,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/free-solid-svg-icons": "^5.6.3",
+    "axios": "^0.18.0",
+    "npm": "^6.7.0",
+    "nuxt": "^1.4.2",
+    "nuxt-fontawesome": "^0.4.0",
+    "pug": "^2.0.3",
+    "vue": "^2.5.22",
+    "vue-recaptcha": "^1.1.1",
+    "vuelidate": "^0.7.4",
+    "webpack": "^4.29.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0"
+  }
+}
