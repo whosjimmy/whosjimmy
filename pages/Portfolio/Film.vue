@@ -12,9 +12,9 @@
           .col-md-4(v-for="film in films")
             .card
               .card-header(v-if="film.Photos && film.Photos.length > 0")
-                appGallery(:images="film.Photos", :cover="baseThumbnailUrl + film.Image")
+                appGallery(:images="film.Photos", :cover="film.Image")
               .card-header(v-else)
-                img.card-img-top(:src="baseThumbnailUrl + film.Image")
+                img.card-img-top(:src="require(`~/assets/${film.Image}`)")
               .card-body
                 h5.card-title.text-center
                   | {{film.Year}}
@@ -36,52 +36,52 @@
 <script>
 import Gallery from '~/components/Gallery.vue'
 import axios from 'axios';
+import films from '~/static/film.json';
 export default {
   data() {
     return {
-      films: [],
-      baseThumbnailUrl: "/img/film/thumbnail/"
+      films: films,
     }
   },
-  created() {
+  // created() {
 
-    axios.defaults.baseURL = 'http://whosjimmy.com/app.php';
-    // axios.defaults.headers.get['Accepts'] =  'application/json';
+  //   axios.defaults.baseURL = 'http://whosjimmy.com/app.php';
+  //   // axios.defaults.headers.get['Accepts'] =  'application/json';
 
-    const reqInterceptor = axios.interceptors.request.use(config => {
-      console.log('Request Interceptor', config);
-      return config;
-    });
+  //   const reqInterceptor = axios.interceptors.request.use(config => {
+  //     console.log('Request Interceptor', config);
+  //     return config;
+  //   });
 
-    const resInterceptor = axios.interceptors.response.use(res => {
-      console.log('Response Interceptor', res);
-      return res;
-    });
+  //   const resInterceptor = axios.interceptors.response.use(res => {
+  //     console.log('Response Interceptor', res);
+  //     return res;
+  //   });
 
-    axios.interceptors.request.eject(reqInterceptor);
-    axios.interceptors.response.eject(resInterceptor);
-    axios.get('')
-      .then(res => {
-        // console.log(res)
-        const data = res.data;
-        const resultArray = [];
-        for (let key in data) {
-            resultArray.push(data[key]);
-        }
-        this.films = resultArray;
-        // console.log("films",this.films.Photos)
-      })
-      .catch(error => console.log(error));
-      // .finally(
-      //   this.films.forEach(element => {
+  //   axios.interceptors.request.eject(reqInterceptor);
+  //   axios.interceptors.response.eject(resInterceptor);
+  //   axios.get('')
+  //     .then(res => {
+  //       // console.log(res)
+  //       const data = res.data;
+  //       const resultArray = [];
+  //       for (let key in data) {
+  //           resultArray.push(data[key]);
+  //       }
+  //       this.films = resultArray;
+  //       // console.log("films",this.films.Photos)
+  //     })
+  //     .catch(error => console.log(error));
+  //     // .finally(
+  //     //   this.films.forEach(element => {
           
-      //   });
-      // );
+  //     //   });
+  //     // );
 
-    const customActions = {
-      getData: {method: 'GET'}
-    };
-  },
+  //   const customActions = {
+  //     getData: {method: 'GET'}
+  //   };
+  // },
   components: {
     appGallery: Gallery
   },

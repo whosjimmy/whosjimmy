@@ -6,7 +6,7 @@
           | For Sale - Movie Memorabilia
     .card-body
       .col-lg-12.text-center
-        img(:src="baseURL + memorabilia.image" style="width: 100%;" :info="[memorabilia.name, memorabilia.availability, memorabilia.notes]")
+        img(:src="require(`~/assets/${memorabilia.image}`)" style="width: 100%;" :info="[memorabilia.name, memorabilia.availability, memorabilia.notes]")
 </template>
 
 <script>
@@ -14,7 +14,6 @@
   export default {
     data() {
       return  {
-        baseURL: 'http://whosjimmy.com/',
         memorabilia : {
           name: "Wolverine Claws - X-men",
           availability: "coming soon",

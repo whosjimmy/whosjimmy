@@ -1,113 +1,117 @@
 <template lang="pug">
-  .app
-    div(v-on:click="toggleModal()")
-      img(:src="baseURL + cover"
-        width="100%")
-      | Click to view {{images.length}} Images
-    Modal(v-bind="{ closeCallback: toggleModal, show, customClass: 'custom_modal_class'}")
-      .imageGallery
-        transition(name="fade" mode="out-in")
-          img.galleryImage(:src="baseURL + image", @click="nextImage")
-        .imageDescription
-          | {{index+1}} of {{images.length}}
-          h5(v-if="info[0]")
-            | {{info[0]}}
-          p(v-if="info[1]")
-            | ({{info[1]}})
-            br
-            | {{info[2]}}
+.app
+  div(v-on:click="toggleModal()")
+    img(:src="require(`~/assets/${cover}`)", width="100%")
+    | Click to view {{ images.length }} Images
+  Modal(
+    v-bind="{ closeCallback: toggleModal, show, customClass: 'custom_modal_class' }"
+  )
+    .imageGallery
+      transition(name="fade", mode="out-in")
+        img.galleryImage(
+          :src="require(`~/assets/${image}`)",
+          @click="nextImage"
+        )
+      .imageDescription
+        | {{ index + 1 }} of {{ images.length }}
+        h5(v-if="info[0]")
+          | {{ info[0] }}
+        p(v-if="info[1]")
+          | ({{ info[1] }})
+          br
+          | {{ info[2] }}
 </template>
 
 <script>
-import Modal from '~/components/Modal.vue'
+import Modal from "~/components/Modal.vue";
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    Modal
+    Modal,
   },
   data() {
     return {
-      baseURL: 'http://whosjimmy.com/',
       show: false,
       index: 0,
       image: this.images[0],
-    }
+    };
   },
   props: {
     images: {
       type: Array,
-      default() { return [] }
+      default() {
+        return [];
+      },
     },
     cover: {
       type: String,
-      default() { return this.images[0] }
+      default() {
+        return this.images[0];
+      },
     },
     info: {
       type: Array,
-      default() { return [] }
+      default() {
+        return [];
+      },
     },
   },
   created() {
-    console.log("cover", this.cover)
-    console.log("cover", this.cover)
+    console.log("cover", this.cover);
     // if(this.poster) {
     //   this.images.unshift("/img/film/" + this.poster)
     //   this.image = "../../" + this.images[1]
     // }
-    console.log("info", this.info)
+    console.log("info", this.info);
   },
   methods: {
     nextImage() {
-      if(this.images.length - 1 > this.index)
-      {
+      if (this.images.length - 1 > this.index) {
         this.index++;
-      }
-      else
-      {
+      } else {
         this.index = 0;
       }
       this.image = this.images[this.index];
     },
-    toggleModal: function() {
+    toggleModal: function () {
       this.show = !this.show;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 
 <style scoped>
-  .fade-enter {
-      opacity: 0;
-  }
-  .fade-enter-active {
-    transition: opacity 0.5s;
-  }
-  .fade-leave {
-    opacity: 1;
-  }
-  .fade-leave-active {
-    transition: opacity 0.5s;  
-    opacity: 0;      
-  }
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  transition: opacity 0.5s;
+}
+.fade-leave {
+  opacity: 1;
+}
+.fade-leave-active {
+  transition: opacity 0.5s;
+  opacity: 0;
+}
 
-  .imageGallery {
-    max-height: 100vh;
-    max-width: 100vw;
-    width: 100vw;
-    height: 100vh;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  .galleryImage {
-    flex-shrink: 1;
-    object-fit: contain;
-    height: 60vh;
-  }
-  .imageDescription {
-    height: 40vh;
-    overflow: scroll;
-  }
-  
+.imageGallery {
+  max-height: 100vh;
+  max-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.galleryImage {
+  flex-shrink: 1;
+  object-fit: contain;
+  height: 60vh;
+}
+.imageDescription {
+  height: 40vh;
+  overflow: scroll;
+}
 </style>
