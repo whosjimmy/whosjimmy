@@ -42,6 +42,9 @@
 .row {
   padding-top: 15px;
 }
+svg {
+  max-height: 25px;
+}
 </style>
 
 
