@@ -2,6 +2,8 @@
 
 > Personal website
 
+[https://whosjimmy.com](https://whosjimmy.com)
+[https://whosjimmy.github.io/](https://whosjimmy.github.io/)
 ## Build Setup
 
 ``` bash
