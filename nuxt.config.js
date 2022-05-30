@@ -2,6 +2,7 @@ const pkg = require('./package')
 
 module.exports = {
   ssr: false,
+  target: 'static', // default is 'server'
 
   /*
   ** Headers of the page
