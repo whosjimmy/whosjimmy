@@ -22,21 +22,21 @@ export default {
       pages: [
         {
           link: "/Forsale/Clocks",
-          image: "img/clocks/thumbnail/clocks.jpg",
+          image: "clocks/thumbnail/clocks.jpg",
           alt: "Artisan Clocks",
           title: "Artisan Clocks",
           name: "Artisan Clocks",
         },
         {
           link: "/Forsale/Memorabilia",
-          image: "img/thumbnail/for_sale/movie_memorabilia.jpg",
+          image: "thumbnail/for_sale/movie_memorabilia.jpg",
           alt: "Movie Memorabilia",
           title: "Movie Memorabilia",
           name: "Movie Memorabilia",
         },
         {
           link: "/Forsale/Stuff",
-          image: "img/Clear_light_bulb.gif",
+          image: "Clear_light_bulb.gif",
           alt: "Stuff For Sale",
           title: "Stuff For Sale",
           name: "Stuff",

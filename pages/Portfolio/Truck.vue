@@ -10,15 +10,15 @@ import Gallery from '~/components/Gallery.vue'
 export default {
   data() {
     return {
-      cover: "img/truck/feb6 2011 254.JPG",
+      cover: "truck/feb6 2011 254.JPG",
       images: [
-        "img/truck/109-0951_IMG.JPG",
-        "img/truck/112-1209_IMG.JPG",
-        "img/truck/116-1652_IMG-1.jpg",
-        "img/truck/IMG_0394.JPG",
-        "img/truck/IMG_0400.JPG",
-        "img/truck/IMG_0411.JPG",
-        "img/truck/IMG_0418.JPG"
+        "truck/109-0951_IMG.JPG",
+        "truck/112-1209_IMG.JPG",
+        "truck/116-1652_IMG-1.jpg",
+        "truck/IMG_0394.JPG",
+        "truck/IMG_0400.JPG",
+        "truck/IMG_0411.JPG",
+        "truck/IMG_0418.JPG"
       ],
       info: [
         "Set truck on location devour set north vancouver"

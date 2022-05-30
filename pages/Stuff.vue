@@ -11,13 +11,13 @@ export default {
   data() {
     return {
       cover: [
-        "img/stuff/cars/117-1768_IMG.JPG",
+        "stuff/cars/117-1768_IMG.JPG",
       ],
       images: [
-        "img/stuff/cars/117-1767_IMG.JPG",
-        "img/stuff/cars/105-0549_IMG.JPG",
-        "img/stuff/cars/a4 324.JPG",
-        "img/stuff/cars/IMG_2562.JPG"
+        "stuff/cars/117-1767_IMG.JPG",
+        "stuff/cars/105-0549_IMG.JPG",
+        "stuff/cars/a4 324.JPG",
+        "stuff/cars/IMG_2562.JPG"
       ],
       info: [
         "Cars",

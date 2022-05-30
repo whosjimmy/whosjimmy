@@ -21,7 +21,7 @@
         role: 'Del Spooner',
         movie: 'I, Robot',
         images: [
-          "img/film/i_robot/111-1102_IMG.jpg"
+          "film/i_robot/111-1102_IMG.jpg"
         ]
       },
       {
@@ -29,7 +29,7 @@
         role: 'Makeup Department',
         movie: 'I, Robot',
         images: [
-          "img/film/i_robot/110-1095_IMG.JPG",
+          "film/i_robot/110-1095_IMG.JPG",
         ]
       },
       {
@@ -37,7 +37,7 @@
         role: 'Lily',
         movie: 'Tooth Fairy',
         images: [
-          "img/film/tooth_fairy/IMG_0045-1.jpg"
+          "film/tooth_fairy/IMG_0045-1.jpg"
         ]
       },
       { 
@@ -45,7 +45,7 @@
         role: 'Derek',
         movie: 'Tooth Fairy',
         images: [
-          "img/film/tooth_fairy/IMG_2012.JPG"
+          "film/tooth_fairy/IMG_2012.JPG"
         ]
       },
       { 
@@ -53,7 +53,7 @@
         role: 'Kurt Wagner / Nightcrawler',
         movie: 'X-Men 2',
         images: [
-          "img/film/x-men_2/103-0382_IMG.jpg"
+          "film/x-men_2/103-0382_IMG.jpg"
         ]
       },
       {
@@ -61,9 +61,9 @@
         role: 'Yuriko Oyama / Lady Deathstrike',
         movie: 'X-Men 2',
         images: [
-          "img/film/x-men_2/104-0493_IMG-1.jpg",
-          "img/film/x-men_2/104-0494_IMG.JPG",
-          "img/film/x-men_2/106-0611_IMG.JPG"
+          "film/x-men_2/104-0493_IMG-1.jpg",
+          "film/x-men_2/104-0494_IMG.JPG",
+          "film/x-men_2/106-0611_IMG.JPG"
         ]
       },
       { 
@@ -71,7 +71,7 @@
         role: 'Wolverine',
         movie: 'X-Men 2',
         images: [
-          "img/film/x-men_2/107-0729_IMG_2.jpg"
+          "film/x-men_2/107-0729_IMG_2.jpg"
         ]
       },
       {
@@ -79,7 +79,7 @@
         role: 'Director',
         movie: 'X-Men 2',
         images: [
-          "img/film/x-men_2/105-0588_IMG.JPG"
+          "film/x-men_2/105-0588_IMG.JPG"
         ]
       },
       {
@@ -87,7 +87,7 @@
         role: 'Trainee Assistant Director',
         movie: 'X-Men 2',
         images: [
-          "img/film/x-men_2/106-0677_IMG.JPG"
+          "film/x-men_2/106-0677_IMG.JPG"
         ]
       }]
     }

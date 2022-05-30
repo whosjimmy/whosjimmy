@@ -2,7 +2,7 @@
   .container-fluid
       .card
         .card-header
-          img(src="img/JIMMY_CLAWS.jpg" width="100%")
+          img(src="~assets/JIMMY_CLAWS.jpg" width="100%")
 
 </template>
 

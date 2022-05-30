@@ -17,8 +17,8 @@ export default {
   data() {
     return {
       images: [
-        "../img/machinery/may07all 106.jpg",
-        "img/machinery/orton1-314.jpg"
+        "machinery/may07all 106.jpg",
+        "machinery/orton1-314.jpg"
       ],
       info: [
         "Shelby Cobra",

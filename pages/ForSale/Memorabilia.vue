@@ -17,7 +17,7 @@
         memorabilia : {
           name: "Wolverine Claws - X-men",
           availability: "coming soon",
-          image: ["img/film/x-men/IMG_0678.JPG"],
+          image: ["film/x-men/IMG_0678.JPG"],
           notes: "Jimmy's personal set from x-men 1, check back often for more information."
         }
       }
