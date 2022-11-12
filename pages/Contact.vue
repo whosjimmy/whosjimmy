@@ -1,50 +1,44 @@
 <template lang="pug">
-  .container-fluid.row
-    .col-md-12
-      form(@submit.prevent="submit")
+.container-fluid
+  .row
+    .col-lg-12.pt-2
+      form(
+        @submit.prevent="submit"
+      )
         .form-group
-          label.d-flex.justify-content-start(for="To") To:
-          input.form-control(type="text",
-                             id="To",
-                             aria-describedby="toHelp",
-                             placeholder="To Jimmy",
-                             value="inquiries@whosjimmy.com",
-                             disabled)
+          input#name.form-control(type="text", name="name", placeholder="Name") 
         .form-group
-          label.d-flex.justify-content-start(for="email") Email:
-          input.form-control(type="email",
-                            v-model="email",
-                            id="email",
-                            aria-describedby="emailHelp",
-                            placeholder="Enter Your Email")
+          input#email.form-control(
+            v-model.trim="$v.email.$model"
+            type="text",
+            name="email",
+            placeholder="Email"
+          )
+          .error(v-if="!$v.email.required") email is required.
+          .error(v-if="!$v.email.email") email is required to be an email.
         .form-group
-          label.d-flex.justify-content-start(for="Subject") Subject:
-          input.form-control(type="text",
-                            v-model="subject",
-                            id="Subject",
-                            aria-describedby="subjectHelp",
-                            placeholder="Enter Subject")
+          input#subject.form-control(
+            v-model="subject",
+            type="text",
+            name="subject",
+            placeholder="Subject"
+          )
+          .error(v-if="!$v.subject.required") subject is required.
         .form-group
-          label.d-flex.justify-content-start(for="Subject") Message:
-          textarea.form-control(id="textArea",
-                            v-model="emailMessage",
-                            rows="3")
-        .form-group.d-flex.justify-content-center
-        
-          vue-recaptcha(
-              @verify="onVerify",
-              @expired="onExpired",
-              ref="recaptcha",
-              sitekey="6LfjVYYUAAAAAETolfKK25Nkm0EEIZd1JDyMrqYf")
-
+          textarea#message.form-control(
+            v-model="message",
+            name="message",
+            cols="30",
+            rows="7",
+            placeholder="Message..."
+          )
+          .error(v-if="!$v.message.required") message is required.
         .form-group
-          button.btn.btn-primary(type="submit" :disabled="!isVailided") Submit
-
-        .form-group
-          .text-success(v-show="sucessfulServerResponse")
-            | {{ sucessfulServerResponse }}
-          .text-danger(v-show="serverError")
-            | {{ serverError }}
+          input.btn.btn-primary.btn-send-message(
+            type="submit",
+            value="Send Message"
+            :disabled="$v.$invalid"
+          )
 </template>
 
 <script>
@@ -57,45 +51,35 @@ export default {
     return {
       email: "",
       subject: "",
-      emailMessage: "",
-      recaptcha: "",
-      isVailided: false,
+      message: "",
       sucessfulServerResponse: "",
-      serverError: ""
+      serverError: "",
+      submitStatus: null,
     };
   },
   validations: {
-    emailMessage: {
+    email: {
       required,
-      email
+      email,
     },
     subject: {
-      required
+      required,
     },
     message: {
-      required
-    }
+      required,
+    },
   },
-  components: { VueRecaptcha },
+  // components: { VueRecaptcha },
   head: {
     script: [
       {
-        src:
-          "https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit",
+        src: "https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit",
         async: true,
-        defer: true
-      }
-    ]
+        defer: true,
+      },
+    ],
   },
   methods: {
-    onVerify: function(response) {
-      this.isVailided = true;
-      this.recaptcha = response;
-      // console.log(response);
-    },
-    onExpired: function() {
-      this.isVailided = false;
-    },
     resetForm() {
       this.email = this.subject = this.emailMessage = this.recaptcha = "";
       this.$refs.recaptcha.reset(); // Direct call reset method
@@ -107,44 +91,46 @@ export default {
       // console.log(this.$v)
       this.$v.$touch();
       this.resetMessages;
-
-      axios
-        .post("/contact.php", {
-          email: this.email,
-          subject: this.subject,
-          emailMessage: this.emailMessage,
-          recaptcha: this.recaptcha
-        })
-        .then(response => {
-          // this.sucessfulServerResponse = response.data.message;
-          this.sucessfulServerResponse = "Message Sent";
-          this.serverError = "";
-          this.resetForm();
-        })
-        .catch(err => {
-          this.serverError = getErrorMessage(err);
-          console.log(this.serverError);
-          if (this.serverError = '"int(200)\n"') {
-            this.serverError = "Form Error";
-          }
-
-          this.sucessfulServerResponse = "";
-
-          //helper to get a displayable message to the user
-          function getErrorMessage(err) {
-            let responseBody;
-            responseBody = err.response;
-            if (!responseBody) {
-              responseBody = err;
-            } else {
-              responseBody = err.response.data || responseBody;
+      this.$v.$touch();
+      if (this.$v.$invalid) {
+        console.log("error");
+      } else {
+        axios
+          .post("https://formspree.io/inquiries@whosjimmy.com", {
+            email: this.email,
+            subject: this.subject,
+            emailMessage: this.emailMessage,
+            recaptcha: this.recaptcha,
+          })
+          .then((response) => {
+            // this.sucessfulServerResponse = response.data.message;
+            this.sucessfulServerResponse = "Message Sent";
+            this.serverError = "";
+            this.resetForm();
+          })
+          .catch((err) => {
+            this.serverError = getErrorMessage(err);
+            console.log(this.serverError);
+            if ((this.serverError = '"int(200)\n"')) {
+              this.serverError = "Form Error";
             }
-            return responseBody.message || JSON.stringify(responseBody);
-            this.$refs.recaptcha.reset();
-          }
-        });
-    }
-  }
+            this.sucessfulServerResponse = "";
+
+            //helper to get a displayable message to the user
+            function getErrorMessage(err) {
+              let responseBody;
+              responseBody = err.response;
+              if (!responseBody) {
+                responseBody = err;
+              } else {
+                responseBody = err.response.data || responseBody;
+              }
+              return responseBody.message || JSON.stringify(responseBody);
+            }
+          });
+      }
+    },
+  },
 };
 </script>
 

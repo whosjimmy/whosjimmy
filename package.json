@@ -5,10 +5,10 @@
       "port": "3030"
     }
   },
-  "name": "WhosJimmy",
+  "name": "whosjimmy.com",
   "version": "1.0.0",
   "description": "Personal website",
-  "author": "Derek J",
+  "author": "Derek@JohnstonSoftwareDevelopment.ca",
   "private": false,
   "scripts": {
     "dev": "nuxt ",
