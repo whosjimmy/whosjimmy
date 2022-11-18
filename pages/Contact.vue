@@ -81,7 +81,7 @@ export default {
   },
   methods: {
     resetForm() {
-      this.email = this.subject = this.emailMessage = this.recaptcha = "";
+      this.email = this.subject = this.message = this.recaptcha = "";
       this.$refs.recaptcha.reset(); // Direct call reset method
     },
     resetMessages() {
@@ -95,13 +95,16 @@ export default {
       if (this.$v.$invalid) {
         console.log("error");
       } else {
+        // console.log("email", this.email)
+        // console.log("subject", this.subject)
+        // console.log("message", this.message)
+        // return null;
         axios
           // .post("https://formspree.io/inquiries@whosjimmy.com", {
           .post("https://formspree.io/f/mwkzygob", {
             email: this.email,
             subject: this.subject,
-            emailMessage: this.emailMessage,
-            recaptcha: this.recaptcha,
+            message: this.message,
           })
           .then((response) => {
             // this.sucessfulServerResponse = response.data.message;
