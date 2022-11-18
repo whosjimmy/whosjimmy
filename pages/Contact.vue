@@ -96,7 +96,8 @@ export default {
         console.log("error");
       } else {
         axios
-          .post("https://formspree.io/inquiries@whosjimmy.com", {
+          // .post("https://formspree.io/inquiries@whosjimmy.com", {
+          .post("https://formspree.io/f/mwkzygob", {
             email: this.email,
             subject: this.subject,
             emailMessage: this.emailMessage,
