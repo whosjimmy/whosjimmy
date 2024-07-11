@@ -56,14 +56,6 @@ export default {
       },
     },
   },
-  created() {
-    console.log("cover", this.cover);
-    // if(this.poster) {
-    //   this.images.unshift("/img/film/" + this.poster)
-    //   this.image = "../../" + this.images[1]
-    // }
-    console.log("info", this.info);
-  },
   methods: {
     nextImage() {
       if (this.images.length - 1 > this.index) {

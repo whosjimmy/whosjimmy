@@ -5,95 +5,85 @@
         | Portfolio - Movies and Television
       .card-body
         .row
-          .col-lg-12(v-if="!films.length")
+          .col-lg-12(v-if="!sortedFilms?.length")
             .card
               .card-header
                 | Loading
-          .col-md-4(v-for="film in films")
-            .card
-              .card-header(v-if="film.Photos && film.Photos.length > 0")
+          .col-md-4.my-1(v-for="film in sortedFilms")
+            .card.h-100
+              .card-header.app-gallery(v-if="film?.Photos && film?.Photos?.length > 0")
                 appGallery(:images="film.Photos", :cover="film.Image")
               .card-header(v-else)
-                img.card-img-top(:src="require(`~/assets/${film.Image}`)")
+                img.card-img-top(:src="require(`~/assets/${film?.Image}`)")
               .card-body
-                h5.card-title.text-center
-                  | {{film.Year}}
-                  br
+                h5.card-title.text-center(v-if="film.Years[0] || film.Years[1]")
+                  span(v-if="film.Years[0]") {{film.Years[0]}}
+                  span(v-if="film.Years[1]") &nbsp;- {{film.Years[1]}}
+                  br(v-if="film.Name")
                   | {{film.Name}}
-                p.card-text.text-center
-                  | ({{film.Field}})
-                  br
-                  | ({{film.Description}})
+                p.card-text.text-center(v-if="film.Department")
+                  | ({{film.Department}})
+                  a.imdb(:href="film.Link")(v-if="film.Link")
+                    br
+                    fab.mr-2.ml-2.fa-2x(:icon="['fab', 'imdb']")
+                  //- br(v-if="film.Description")
+                  //- | ({{film.Description}})
 </template>
 
 <style scoped>
-  .card {
-    margin-bottom: 10px;
-  }
+.card {
+  margin-bottom: 10px;
+}
+.card-body {
+  min-height: 120px;
+}
+.imdb {
+  color: #f5c518;
+  /* svg {
+    background-color: #000;
+  } */
+}
+/* TODO: make all headers the same size */
+/* .card-header {
+  height: 100%;
+} */
+.app-gallery {
+  cursor: pointer;
+}
 </style>
 
-
 <script>
-import Gallery from '~/components/Gallery.vue'
-import axios from 'axios';
-import films from '~/static/film.json';
+import Gallery from "~/components/Gallery.vue";
+import films from "~/static/film.json";
 export default {
   data() {
     return {
-      films: films,
-    }
+      films,
+      sortedFilms: [],
+    };
   },
-  // created() {
-
-  //   axios.defaults.baseURL = 'http://whosjimmy.com/app.php';
-  //   // axios.defaults.headers.get['Accepts'] =  'application/json';
-
-  //   const reqInterceptor = axios.interceptors.request.use(config => {
-  //     console.log('Request Interceptor', config);
-  //     return config;
-  //   });
-
-  //   const resInterceptor = axios.interceptors.response.use(res => {
-  //     console.log('Response Interceptor', res);
-  //     return res;
-  //   });
-
-  //   axios.interceptors.request.eject(reqInterceptor);
-  //   axios.interceptors.response.eject(resInterceptor);
-  //   axios.get('')
-  //     .then(res => {
-  //       // console.log(res)
-  //       const data = res.data;
-  //       const resultArray = [];
-  //       for (let key in data) {
-  //           resultArray.push(data[key]);
-  //       }
-  //       this.films = resultArray;
-  //       // console.log("films",this.films.Photos)
-  //     })
-  //     .catch(error => console.log(error));
-  //     // .finally(
-  //     //   this.films.forEach(element => {
-          
-  //     //   });
-  //     // );
-
-  //   const customActions = {
-  //     getData: {method: 'GET'}
-  //   };
-  // },
+  created() {
+    this.processMovies();
+  },
+  methods: {
+    processMovies() {
+      let allMovies = [];
+      this.films.forEach((department) => {
+        department.Movies.forEach((movie) => {
+          allMovies.push({
+            ...movie,
+            Department: department.Department,
+            Short: department.Short,
+          });
+        });
+      });
+      this.sortedFilms = allMovies.sort((a, b) => {
+        return new Date(b.Years[0]) - new Date(a.Years[0]);
+      });
+    },
+  },
   components: {
-    appGallery: Gallery
+    appGallery: Gallery,
   },
-//   computed: {
-//     withPoster(evn, film){
-//       // newPhotos = Photos;
-// // /img/film/rise_of_the_planet_of_the_apes.jpg
-//       film.Photos.unshift("/img/film/" + film.Poster) 
-//       console.log("newPhotos", film)
-
-//       return(film.Photos)
-//     }
-//   },
-}
+};
 </script>

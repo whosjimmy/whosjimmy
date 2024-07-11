@@ -88,17 +88,12 @@ export default {
       (this.sucessfulServerResponse = ""), (this.serverError = "");
     },
     submit() {
-      // console.log(this.$v)
       this.$v.$touch();
       this.resetMessages;
       this.$v.$touch();
       if (this.$v.$invalid) {
-        console.log("error");
+        console.error("error");
       } else {
-        // console.log("email", this.email)
-        // console.log("subject", this.subject)
-        // console.log("message", this.message)
-        // return null;
         axios
           // .post("https://formspree.io/inquiries@whosjimmy.com", {
           .post("https://formspree.io/f/mwkzygob", {
@@ -114,7 +109,7 @@ export default {
           })
           .catch((err) => {
             this.serverError = getErrorMessage(err);
-            console.log(this.serverError);
+            console.error(this.serverError);
             if ((this.serverError = '"int(200)\n"')) {
               this.serverError = "Form Error";
             }
