@@ -25,7 +25,7 @@
                   | ({{film.Department}})
                   a.imdb(:href="film.Link")(v-if="film.Link")
                     br
-                    fab.mr-2.ml-2.fa-2x(:icon="['fab', 'imdb']")
+                    fab.mr-2.ml-2.fa-2x(height="20px", :icon="['fab', 'imdb']")
                   //- br(v-if="film.Description")
                   //- | ({{film.Description}})
 </template>
