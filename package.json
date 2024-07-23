@@ -1,55 +1,43 @@
 {
-	"config": {
-		"nuxt": {
-			"host": "0.0.0.0",
-			"port": "3030"
-		}
-	},
-	"name": "whosjimmy.com",
-	"version": "1.0.0",
-	"description": "Personal website",
-	"author": "Derek@JohnstonSoftwareDevelopment.ca",
-	"private": false,
-	"scripts": {
-		"dev": "nuxt dev",
-		"build": "nuxt build",
-		"start": "nuxt start",
-		"generate": "nuxt generate",
-		"add-domain": "echo \"whosjimmy.com\" > build/CNAME",
-		"deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
-	},
-	"dependencies": {
-		"@fortawesome/fontawesome-svg-core": "^6.5.2",
-		"@fortawesome/free-brands-svg-icons": "^6.5.2",
-		"@fortawesome/free-regular-svg-icons": "^6.5.2",
-		"@fortawesome/free-solid-svg-icons": "^6.5.2",
-		"@fortawesome/vue-fontawesome": "^3.0.8",
-		"@nuxt/scripts": "^0.6.4",
-		"@nuxtjs/fontawesome": "^1.1.2",
-		"@pinia/nuxt": "^0.5.1",
-		"@vue/composition-api": "^1.6.2",
-		"@vuelidate/core": "^2.0.3",
-		"@vuelidate/validators": "^2.0.4",
-		"axios": "^0.27.2",
-		"bootstrap": "^5.3.3",
-		"bootstrap-vue": "^2.23.1",
-		"npm": "^8.11.0",
-		"nuxt": "^3.12.4",
-		"pug": "^3.0.2",
-		"pug-plain-loader": "^1.1.0",
-		"vue": "^3.4.33",
-		"vue-recaptcha": "^2.0.2",
-		"vue-router": "^4.4.0",
-		"vuelidate": "^0.7.4",
-		"webpack": "^4.46.0"
-	},
-	"devDependencies": {
-		"@nuxtjs/eslint-module": "^4.1.0",
-		"@types/bootstrap": "^5.2.10",
-		"cross-env": "^7.0.3",
-		"eslint-plugin-vue": "^9.27.0",
-		"node-sass": "^9.0.0",
-		"sass": "^1.77.8",
-		"sass-loader": "^10.1.1"
-	}
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "3030"
+    }
+  },
+  "name": "whosjimmy.com",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "author": "Derek@JohnstonSoftwareDevelopment.ca",
+  "private": false,
+  "scripts": {
+    "dev": "nuxt ",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "add-domain": "echo \"whosjimmy.com\" > build/CNAME",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@vue/composition-api": "^1.6.2",
+    "axios": "^0.27.2",
+    "npm": "^8.11.0",
+    "nuxt": "^2.15.8",
+    "nuxt-fontawesome": "^0.4.0",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
+    "vue": "^2.6.14",
+    "vue-recaptcha": "^2.0.2",
+    "vuelidate": "^0.7.4",
+    "webpack": "^4.46.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "node-sass": "^9.0.0",
+    "sass-loader": "^10.1.1"
+  }
 }

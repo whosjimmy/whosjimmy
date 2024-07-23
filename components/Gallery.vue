@@ -1,7 +1,7 @@
 <template lang="pug">
 .app
   div(v-on:click="toggleModal()")
-    img(:src="`/_nuxt/assets/${cover}`", width="100%")
+    img(:src="require(`~/assets/${cover}`)", width="100%")
     | Click to view {{ images.length }} Images
   Modal(
     v-bind="{ closeCallback: toggleModal, show, customClass: 'custom_modal_class' }"
@@ -9,7 +9,7 @@
     .imageGallery
       transition(name="fade", mode="out-in")
         img.galleryImage(
-          :src="`/_nuxt/assets/${image}`",
+          :src="require(`~/assets/${image}`)",
           @click="nextImage"
         )
       .imageDescription
@@ -23,87 +23,87 @@
 </template>
 
 <script>
-import Modal from '~/components/Modal.vue'
+import Modal from "~/components/Modal.vue";
 export default {
-	name: 'app',
-	components: {
-		Modal,
-	},
-	data() {
-		return {
-			show: false,
-			index: 0,
-			image: this.images[0],
-		}
-	},
-	props: {
-		images: {
-			type: Array,
-			default() {
-				return []
-			},
-		},
-		cover: {
-			type: String,
-			default() {
-				// return this.images[0]
-				return []
-			},
-		},
-		info: {
-			type: Array,
-			default() {
-				return []
-			},
-		},
-	},
-	methods: {
-		nextImage() {
-			if (this.images.length - 1 > this.index) {
-				this.index++
-			} else {
-				this.index = 0
-			}
-			this.image = this.images[this.index]
-		},
-		toggleModal: function () {
-			this.show = !this.show
-		},
-	},
-}
+  name: "app",
+  components: {
+    Modal,
+  },
+  data() {
+    return {
+      show: false,
+      index: 0,
+      image: this.images[0],
+    };
+  },
+  props: {
+    images: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
+    cover: {
+      type: String,
+      default() {
+        return this.images[0];
+      },
+    },
+    info: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
+  },
+  methods: {
+    nextImage() {
+      if (this.images.length - 1 > this.index) {
+        this.index++;
+      } else {
+        this.index = 0;
+      }
+      this.image = this.images[this.index];
+    },
+    toggleModal: function () {
+      this.show = !this.show;
+    },
+  },
+};
 </script>
+
 
 <style scoped>
 .fade-enter {
-	opacity: 0;
+  opacity: 0;
 }
 .fade-enter-active {
-	transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 .fade-leave {
-	opacity: 1;
+  opacity: 1;
 }
 .fade-leave-active {
-	transition: opacity 0.5s;
-	opacity: 0;
+  transition: opacity 0.5s;
+  opacity: 0;
 }
 
 .imageGallery {
-	max-height: 100vh;
-	max-width: 100vw;
-	width: 100vw;
-	height: 100vh;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
+  max-height: 100vh;
+  max-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .galleryImage {
-	flex-shrink: 1;
-	object-fit: contain;
-	height: 60vh;
+  flex-shrink: 1;
+  object-fit: contain;
+  height: 60vh;
 }
 .imageDescription {
-	height: 40vh;
-	overflow: scroll;
+  height: 40vh;
+  overflow: scroll;
 }
 </style>
