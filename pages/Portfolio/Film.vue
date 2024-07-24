@@ -14,7 +14,7 @@
             .card-header.app-gallery(v-if="film?.Photos && film?.Photos?.length > 0")
               appGallery(:images="film.Photos", :cover="film.Image")
             .card-header(v-else)
-              img.card-img-top(:src="`/_nuxt/assets/${film?.Image}`")
+              img.card-img-top(:src="film?.Image")
             .card-body
               h5.card-title.text-center(v-if="film.Years[0] || film.Years[1]")
                 span(v-if="film.Years[0]") {{film.Years[0]}}

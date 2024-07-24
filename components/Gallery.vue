@@ -1,7 +1,7 @@
 <template lang="pug">
 .app
   div(v-on:click="toggleModal()")
-    img(:src="`/_nuxt/assets/${cover}`", width="100%")
+    img(:src="cover", width="100%")
     | Click to view {{ images.length }} Images
   Modal(
     v-bind="{ closeCallback: toggleModal, show, customClass: 'custom_modal_class' }"
@@ -9,7 +9,7 @@
     .imageGallery
       transition(name="fade", mode="out-in")
         img.galleryImage(
-          :src="`/_nuxt/assets/${image}`",
+          :src="image",
           @click="nextImage"
         )
       .imageDescription

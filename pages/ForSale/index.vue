@@ -10,7 +10,7 @@
             :to="page.link",
             width="100%"
           )
-            img(:src="`/_nuxt/assets/${page.image}`", :alt="page.alt" width="100%")
+            img(:src="page.image", :alt="page.alt" width="100%")
         .card-body
           h5.card-title.text-center
             | {{ page.name }}

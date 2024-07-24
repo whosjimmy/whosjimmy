@@ -10,7 +10,7 @@
             :to="page.link",
             width="100%"
           )
-            img(:src="`/_nuxt/assets/${page.image}`", :alt="page.alt" width="100%")
+            img(:src="page.image", :alt="page.alt" width="100%")
         .card-body
           h5.card-title.text-center
             | {{ page.name }}
@@ -50,7 +50,7 @@ export default {
 				},
 				{
 					link: '/Portfolio/Film',
-					image: 'film/thumbnail/x-men_the_last_stand.jpg',
+					image: '/film/thumbnail/x-men_the_last_stand.jpg',
 					alt: 'Movies and Television',
 					title: 'Movies and Television',
 					name: 'Movies and Television',
