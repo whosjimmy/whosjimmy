@@ -16,7 +16,10 @@ import Gallery from '~/components/Gallery.vue'
 export default {
 	data() {
 		return {
-			images: ['machinery/may07all 106.jpg', 'machinery/orton1-314.jpg'],
+			images: [
+				'/machinery/may07all 106.jpg',
+				'/machinery/orton1-314.jpg',
+			],
 			info: ['Shelby Cobra', 'Ignition sensor mount'],
 		}
 	},

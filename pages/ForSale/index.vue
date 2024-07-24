@@ -22,7 +22,7 @@ export default {
 			pages: [
 				{
 					link: '/Forsale/Clocks',
-					image: 'clocks/thumbnail/clocks.jpg',
+					image: '/clocks/thumbnail/clocks.jpg',
 					alt: 'Artisan Clocks',
 					title: 'Artisan Clocks',
 					name: 'Artisan Clocks',
