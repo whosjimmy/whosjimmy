@@ -17,66 +17,67 @@
 </template>
 <script>
 export default {
-  props: {
-    images: {
-      type: Array,
-      default() { return [] }
-    },
-    info: {
-      type: Array,
-      default() { return [] }
-    },
-    poster: {
-      type: String,
-      default() { return null }
-    }
-  },
-  data() {
-    return {
-      index: 0,
-      image: "../../" + this.images[0]
-    }
-  },
-  created() {
-    if(this.poster) {
-      this.images.unshift("/img/film/" + this.poster)
-      this.image = "../../img/film/" + this.poster
-    }
-
-  },
-  methods: {
-    nextImage() {
-      if(this.images.length - 1 > this.index)
-      {
-        this.index++;
-      }
-      else
-      {
-        this.index = 0;
-      }
-      this.image = "../../" + this.images[this.index];
-    }
-  }
+	props: {
+		images: {
+			type: Array,
+			default() {
+				return []
+			},
+		},
+		info: {
+			type: Array,
+			default() {
+				return []
+			},
+		},
+		poster: {
+			type: String,
+			default() {
+				return null
+			},
+		},
+	},
+	data() {
+		return {
+			index: 0,
+			image: '../../' + this.images[0],
+		}
+	},
+	created() {
+		if (this.poster) {
+			this.images.unshift('/img/film/' + this.poster)
+			this.image = '../../img/film/' + this.poster
+		}
+	},
+	methods: {
+		nextImage() {
+			if (this.images.length - 1 > this.index) {
+				this.index++
+			} else {
+				this.index = 0
+			}
+			this.image = '../../' + this.images[this.index]
+		},
+	},
 }
 </script>
 
 <style scoped>
-  .fade-enter {
-      opacity: 0;
-  }
-  .fade-enter-active {
-    transition: opacity 0.5s;
-  }
-  .fade-leave {
-    opacity: 1;
-  }
-  .fade-leave-active {
-    transition: opacity 0.5s;  
-    opacity: 0;      
-  }
+.fade-enter {
+	opacity: 0;
+}
+.fade-enter-active {
+	transition: opacity 0.5s;
+}
+.fade-leave {
+	opacity: 1;
+}
+.fade-leave-active {
+	transition: opacity 0.5s;
+	opacity: 0;
+}
 
-  .card {
-    margin-top: 10px;
-  }
-  
+.card {
+	margin-top: 10px;
+}
 </style>

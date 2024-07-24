@@ -5,17 +5,15 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      films: [
-        {id: 0, name: "x-men"}
-      ]
-    }
-  },
-  methods: {
-    edit_film() {
-      this.$router.push("/Admin/Film")
-    }
-  }
+	data() {
+		return {
+			films: [{ id: 0, name: 'x-men' }],
+		}
+	},
+	methods: {
+		edit_film() {
+			this.$router.push('/Admin/Film')
+		},
+	},
 }
 </script>

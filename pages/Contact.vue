@@ -116,7 +116,8 @@ export default {
 				console.error('error')
 			} else {
 				axios
-					.post('https://formspree.io/f/xdknagyz', { // jimmy@whosjimmy.com
+					.post('https://formspree.io/f/xdknagyz', {
+						// jimmy@whosjimmy.com
 						// .post('https://formspree.io/f/mwkzygob', { // sixhundred_claws@yahoo.com
 						email: this.email,
 						subject: this.subject,

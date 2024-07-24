@@ -24,23 +24,22 @@
         <p>Writen by : Sheila Erdmann January 2014</p>
 </template>
 <style scoped>
-
-.video_container{
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
+.video_container {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 56.25%;
 }
 .video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
-  .bio{
-    padding:3px;
-    text-align:left;
-  }
+.bio {
+	padding: 3px;
+	text-align: left;
+}
 </style>

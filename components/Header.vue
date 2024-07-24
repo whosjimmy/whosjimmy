@@ -37,26 +37,26 @@
 // import { mapGetters } from 'vuex'
 
 export default {
-  // data() {
-  //   return {
-  //     isDropdownPortfolioOpen: false,
-  //     isDropdownForSaleOpen: false,
-  //     isDropdownOpen: false,
-  //   }
-  // },
-  // methods: {
-  //   openDropdownPortfolio() {
-  //     this.isDropdownPortfolioOpen = true
-  //   },
-  //   closeDropdownPortfolio() {
-  //     this.isDropdownPortfolioOpen = false
-  //   },
-  //   openDropdownForSale() {
-  //     this.isDropdownForSaleOpen = true
-  //   },
-  //   closeDropdownForSale() {
-  //     this.isDropdownForSaleOpen = false
-  //   },
-  // }
-};
+	// data() {
+	//   return {
+	//     isDropdownPortfolioOpen: false,
+	//     isDropdownForSaleOpen: false,
+	//     isDropdownOpen: false,
+	//   }
+	// },
+	// methods: {
+	//   openDropdownPortfolio() {
+	//     this.isDropdownPortfolioOpen = true
+	//   },
+	//   closeDropdownPortfolio() {
+	//     this.isDropdownPortfolioOpen = false
+	//   },
+	//   openDropdownForSale() {
+	//     this.isDropdownForSaleOpen = true
+	//   },
+	//   closeDropdownForSale() {
+	//     this.isDropdownForSaleOpen = false
+	//   },
+	// }
+}
 </script>

@@ -26,13 +26,19 @@ body {
 }
 .floating-card {
 	background-color: white;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for floating effect */
-	transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effect */
+	box-shadow:
+		0 4px 8px rgba(0, 0, 0, 0.1),
+		0 6px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for floating effect */
+	transition:
+		transform 0.2s,
+		box-shadow 0.2s; /* Smooth transition for hover effect */
 }
 
 .floating-card:hover {
 	transform: translateY(-10px); /* Slight lift on hover */
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+	box-shadow:
+		0 8px 16px rgba(0, 0, 0, 0.2),
+		0 12px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 </style>
 

@@ -1,14 +1,14 @@
 <template lang="pug">
-  .container-fluid.col-lg-12
-    .card.rounded.text-center
-      .card-header
-        | Portfolio - Custom Machinery
-      .card-body
-        .col-lg-12.text-center
-          appGallery(:images="images" :info="info" :cover="images[0]")
-    .row.text-center
-      .col-lg-12
-        | Click on an image, to view image gallery.
+.container-fluid.col-lg-12
+  .card.rounded.text-center
+    .card-header
+      | Portfolio - Custom Machinery
+    .card-body
+      .col-lg-12.text-center
+        appGallery(:images="images" :info="info" :cover="images[0]")
+  .row.text-center
+    .col-lg-12
+      | Click on an image, to view image gallery.
 </template>
 
 <script>

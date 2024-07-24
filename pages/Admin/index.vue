@@ -11,14 +11,13 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-    }
-  },
-  methods: {
-    submit() {
-      this.$router.push("/Admin/Portal")
-    }
-  }
+	data() {
+		return {}
+	},
+	methods: {
+		submit() {
+			this.$router.push('/Admin/Portal')
+		},
+	},
 }
 </script>
