@@ -48,8 +48,8 @@ export default {
 	},
 	methods: {
 		...mapActions(useAuthStore, ['signIn']),
-		async handleSubmit() { 
-			await this.signIn(this.email, this.password).then(() => { 
+		async handleSubmit() {
+			await this.signIn(this.email, this.password).then(() => {
 				// this.$router.push({ name: 'Admin' })
 			})
 		},
