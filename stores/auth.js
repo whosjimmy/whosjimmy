@@ -25,7 +25,6 @@ export const useAuthStore = defineStore('auth', {
 				)
 				this.user = userCredential.user
 				this.authError = null
-				console.log('Signed in:', userCredential.user)
 				router.push({ name: 'Admin' })
 			} catch (error) {
 				this.authError = error.message
