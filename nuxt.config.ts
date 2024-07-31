@@ -65,10 +65,6 @@ export default defineNuxtConfig({
 		'@fortawesome/fontawesome-svg-core/styles.css',
 		'~/assets/styles/main.scss',
 	],
-
-	dotenv: {
-		/* module options */
-	},
 	/*
 	 ** Plugins to load before mounting the App
 	 */
@@ -78,14 +74,6 @@ export default defineNuxtConfig({
 	 ** Nuxt.js modules
 	 */
 	// modules: ['@pinia/nuxt'],
-	pinia: {
-		autoImports: [
-			// automatically imports `defineStore`, `storeToRefs` and `mapStores`
-			'defineStore',
-			'storeToRefs',
-			'mapStores',
-		],
-	},
 
 	buildModules: ['@nuxtjs/dotenv', '@pinia/nuxt'],
 	/*

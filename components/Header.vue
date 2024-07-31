@@ -41,7 +41,7 @@ nav.navbar.navbar-expand-md.navbar-light.bg-light
 
 <script>
 import { mapState, mapActions } from 'pinia'
-import { useAuthStore } from '~/store/auth'
+import { useAuthStore } from '~/stores/auth'
 
 export default {
 	data() {

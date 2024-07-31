@@ -26,7 +26,7 @@ definePageMeta({
 
 <script>
 import { mapState, mapActions } from 'pinia'
-import { useAuthStore } from '~/store/auth'
+import { useAuthStore } from '~/stores/auth'
 
 export default {
 	// middleware: 'auth', // TODO: nuxt3 auth seems to need to use setup but it won't generate with it

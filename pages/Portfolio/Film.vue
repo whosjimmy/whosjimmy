@@ -32,7 +32,7 @@
 
 <script>
 import { mapState } from 'pinia'
-import { useDepartmentStore } from '~/store/departments'
+import { useDepartmentStore } from '~/stores/departments'
 import Gallery from '~/components/Gallery.vue'
 import films from '~/public/film.json'
 export default {

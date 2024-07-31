@@ -9,7 +9,7 @@
 </template>
 <script setup>
 import { useAuthStore } from '~/stores/auth'
-import { useDepartmentStore } from '~/store/departments'
+import { useDepartmentStore } from '~/stores/departments'
 
 const authStore = useAuthStore()
 const departmentStore = useDepartmentStore() // Use the Pinia store

@@ -1,6 +1,6 @@
 // stores/auth.js
 import { defineStore } from 'pinia'
-import { useNuxtApp } from '#app'
+import { useNuxtApp, useRouter } from '#app'
 import {
 	signInWithEmailAndPassword,
 	signOut,
@@ -11,10 +11,12 @@ export const useAuthStore = defineStore('auth', {
 	state: () => ({
 		user: null,
 		authError: null,
+		loading: true,
 	}),
 	actions: {
 		async signIn(email, password) {
 			const { $auth } = useNuxtApp()
+			const router = useRouter()
 			try {
 				const userCredential = await signInWithEmailAndPassword(
 					$auth,
@@ -23,6 +25,8 @@ export const useAuthStore = defineStore('auth', {
 				)
 				this.user = userCredential.user
 				this.authError = null
+				console.log('Signed in:', userCredential.user)
+				router.push({ name: 'Admin' })
 			} catch (error) {
 				this.authError = error.message
 			}
@@ -47,6 +51,7 @@ export const useAuthStore = defineStore('auth', {
 			const { $auth } = useNuxtApp()
 			onAuthStateChanged($auth, (user) => {
 				this.user = user || null
+				this.loading = false
 			})
 		},
 	},

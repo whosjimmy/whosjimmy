@@ -24,24 +24,35 @@
 		</form>
 		<div class="row">
 			<div class="col-md-12">
-				<p v-if="authStore.getAuthError">
-					{{ authStore.getAuthError }}
+				<p v-if="getAuthError">
+					{{ getAuthError }}
 				</p>
 			</div>
 		</div>
 	</div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
+<script>
 import { useAuthStore } from '~/stores/auth'
-
-const authStore = useAuthStore()
-
-const email = ref('')
-const password = ref('')
-
-const handleSubmit = async () => {
-	await authStore.signIn(email.value, password.value)
+import { mapState, mapActions } from 'pinia'
+export default {
+	name: 'Login',
+	data() {
+		return {
+			email: '',
+			password: '',
+		}
+	},
+	computed: {
+		...mapState(useAuthStore, ['getAuthError']),
+	},
+	methods: {
+		...mapActions(useAuthStore, ['signIn']),
+		async handleSubmit() { 
+			await this.signIn(this.email, this.password).then(() => { 
+				// this.$router.push({ name: 'Admin' })
+			})
+		},
+	},
 }
 </script>

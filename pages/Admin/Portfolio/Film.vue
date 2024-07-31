@@ -224,8 +224,8 @@ definePageMeta({
 
 <script>
 import { mapState, mapActions } from 'pinia'
-import { useDepartmentStore } from '~/store/departments'
-import { useAuthStore } from '~/store/auth'
+import { useDepartmentStore } from '~/stores/departments'
+import { useAuthStore } from '~/stores/auth'
 import { useRouter } from 'vue-router'
 
 export default {
