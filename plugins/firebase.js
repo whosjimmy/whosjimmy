@@ -1,49 +1,25 @@
-import { defineNuxtPlugin, useRuntimeConfig } from '#app'
-import { initializeApp, getApps, getApp } from 'firebase/app'
-import {
-	getAuth,
-	setPersistence,
-	browserLocalPersistence,
-	onAuthStateChanged,
-} from 'firebase/auth'
+
+// plugins/firebase.js
+import { initializeApp } from 'firebase/app'
+import { getAuth } from 'firebase/auth'
+import { defineNuxtPlugin } from '#app'
 import { getFirestore } from 'firebase/firestore'
 
 export default defineNuxtPlugin((nuxtApp) => {
-	const config = useRuntimeConfig().public
+	const config = useRuntimeConfig()
 
 	const firebaseConfig = {
-		apiKey: config.firebaseApiKey,
-		authDomain: config.firebaseAuthDomain,
-		projectId: config.firebaseProjectId,
-		storageBucket: config.firebaseStorageBucket,
-		messagingSenderId: config.firebaseMessagingSenderId,
-		appId: config.firebaseAppId,
-		measurementId: config.firebaseMeasurementId,
+		apiKey: config.public.FIREBASE_API_KEY,
+		authDomain: config.public.FIREBASE_AUTH_DOMAIN,
+		projectId: config.public.FIREBASE_PROJECT_ID,
+		storageBucket: config.public.FIREBASE_STORAGE_BUCKET,
+		messagingSenderId: config.public.FIREBASE_MESSAGING_SENDER_ID,
+		appId: config.public.FIREBASE_APP_ID,
+		measurementId: config.public.FIREBASE_MEASUREMENT_ID,
 	}
 
-	let app
-	if (!getApps().length) {
-		app = initializeApp(firebaseConfig)
-	} else {
-		app = getApp()
-	}
-
+	const app = initializeApp(firebaseConfig)
 	const auth = getAuth(app)
-	setPersistence(auth, browserLocalPersistence)
-		.then(() => {
-			// console.log('Persistence set to browserLocalPersistence')
-		})
-		.catch((error) => {
-			console.error('Error setting persistence:', error)
-		})
-
-	onAuthStateChanged(auth, (user) => {
-		if (user) {
-			// console.log('User signed in:', user.email)
-		} else {
-			// console.log('No user signed in')
-		}
-	})
 
 	const firestore = getFirestore(app)
 

@@ -1,17 +1,23 @@
 export default defineNuxtConfig({
+	// ssr: false,
+	// target: 'static', // default is 'server'
 	runtimeConfig: {
 		public: {
-			firebaseApiKey: process.env.FIREBASE_API_KEY,
-			firebaseAuthDomain: process.env.FIREBASE_AUTH_DOMAIN,
-			firebaseProjectId: process.env.FIREBASE_PROJECT_ID,
-			firebaseStorageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-			firebaseMessagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-			firebaseAppId: process.env.FIREBASE_APP_ID,
-			firebaseMeasurementId: process.env.FIREBASE_MEASUREMENT_ID,
+			FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
+			FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN,
+			FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID,
+			FIREBASE_STORAGE_BUCKET: process.env.FIREBASE_STORAGE_BUCKET,
+			FIREBASE_MESSAGING_SENDER_ID:
+				process.env.FIREBASE_MESSAGING_SENDER_ID,
+			FIREBASE_APP_ID: process.env.FIREBASE_APP_ID,
+			FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID,
 		},
 	},
 	app: {
 		pageTransition: { name: 'page', mode: 'out-in' },
+		/*
+		 ** Headers of the page
+		 */
 		head: {
 			title: "Who's Jimmy",
 			meta: [
@@ -59,14 +65,37 @@ export default defineNuxtConfig({
 		'@fortawesome/fontawesome-svg-core/styles.css',
 		'~/assets/styles/main.scss',
 	],
-	plugins: [
-		'~/plugins/firebase.js',
-		'~/plugins/pinia.js',
-		'~/plugins/fontawesome.js',
-		'~/plugins/init.js',
-	],
-	router: {
-		middleware: ['auth'],
+
+	dotenv: {
+		/* module options */
+	},
+	/*
+	 ** Plugins to load before mounting the App
+	 */
+
+	plugins: ['~/plugins/firebase.js'],
+	/*
+	 ** Nuxt.js modules
+	 */
+	// modules: ['@pinia/nuxt'],
+	pinia: {
+		autoImports: [
+			// automatically imports `defineStore`, `storeToRefs` and `mapStores`
+			'defineStore',
+			'storeToRefs',
+			'mapStores',
+		],
+	},
+
+	buildModules: ['@nuxtjs/dotenv', '@pinia/nuxt'],
+	/*
+	 ** Build configuration
+	 */
+	build: {
+		/*
+		 ** You can extend webpack config here
+		 */
+		// extend(config, ctx) {},
 	},
 	auth: {
 		// middleware: ['~/middleware/auth.js'],

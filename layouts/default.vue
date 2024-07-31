@@ -7,7 +7,12 @@
 	br
 	app-footer
 </template>
+<script setup>
+import { useAuthStore } from '~/stores/auth'
 
+const authStore = useAuthStore()
+authStore.initializeAuth()
+</script>
 <script>
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
