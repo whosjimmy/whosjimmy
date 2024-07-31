@@ -1,10 +1,6 @@
 export default defineNuxtConfig({
 	// ssr: false,
 	// target: 'static', // default is 'server'
-
-	/*
-	 ** Headers of the page
-	 */
 	runtimeConfig: {
 		public: {
 			FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
@@ -18,6 +14,10 @@ export default defineNuxtConfig({
 		},
 	},
 	app: {
+		pageTransition: { name: 'page', mode: 'out-in' },
+		/*
+		 ** Headers of the page
+		 */
 		head: {
 			title: "Who's Jimmy",
 			meta: [
@@ -61,15 +61,6 @@ export default defineNuxtConfig({
 			],
 		},
 	},
-
-	/*
-	 ** Customize the progress-bar color
-	 */
-	// loading: { color: '#FFFFFF' },
-
-	/*
-	 ** Global CSS
-	 */
 	css: [
 		'@fortawesome/fontawesome-svg-core/styles.css',
 		'~/assets/styles/main.scss',
@@ -106,6 +97,29 @@ export default defineNuxtConfig({
 		 */
 		// extend(config, ctx) {},
 	},
-
+	auth: {
+		// middleware: ['~/middleware/auth.js'],
+		cookie: {
+			prefix: 'auth.',
+		},
+		localStorage: {
+			prefix: 'auth.',
+		},
+		strategies: {
+			local: {
+				token: {
+					property: 'token',
+					global: true,
+					required: true,
+					type: 'Bearer',
+				},
+				user: {
+					property: 'user',
+					autoFetch: true,
+				},
+			},
+		},
+	},
+	build: { transpile: ['@fortawesome/vue-fontawesome'] },
 	compatibilityDate: '2024-07-22',
 })

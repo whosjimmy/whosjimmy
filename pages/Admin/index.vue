@@ -1,23 +1,60 @@
-<template lang="pug">
-  .wrapper
-    form.form-signin
-      h2.form-signin-heading Admin login
-      input.form-control(type="text" name="username" placeholder="Email Address" required="" autofocus="")
-      input.form-control(type="password" name="password" placeholder="Password" required="")      
-      label.checkbox
-        input(type="checkbox" value="remember-me" id="rememberMe" name="rememberMe")
-        |  Remember me
-      button.btn.btn-lg.btn-primary.btn-block(type="submit" @click.prevent="submit") Login
+<template>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Admin</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<nuxt-link to="/Admin/Portfolio/Film">Film</nuxt-link>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<button @click="handleSignOut">Sign Out</button>
+			</div>
+		</div>
+	</div>
 </template>
+
+<script setup>
+definePageMeta({
+	middleware: 'auth',
+})
+</script>
+
 <script>
+import { mapState, mapActions } from 'pinia'
+import { useAuthStore } from '~/store/auth'
+
 export default {
-	data() {
-		return {}
+	// middleware: 'auth', // TODO: nuxt3 auth seems to need to use setup but it won't generate with it
+	computed: {
+		...mapState(useAuthStore, {
+			user: 'getUser',
+			isAuthenticated: 'isAuthenticated',
+		}),
 	},
 	methods: {
-		submit() {
-			this.$router.push('/Admin/Portal')
+		...mapActions(useAuthStore, ['signOut']),
+		handleSignOut() {
+			this.signOut()
+			this.$router.push('/login')
 		},
 	},
 }
 </script>
+
+<style scoped>
+.movie-details {
+	margin-top: 20px;
+}
+
+.photo {
+	margin-bottom: 10px;
+}
+.row {
+	margin-top: 10px;
+}
+</style>

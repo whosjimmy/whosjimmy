@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons'
 import {
 	faYoutube,
-	faSquareFacebook,
+	faFacebookSquare, // Adjusted to match the correct name if necessary
 	faTwitter,
 	faImdb,
 } from '@fortawesome/free-brands-svg-icons'
@@ -12,14 +12,9 @@ import {
 // This is important, we are going to let Nuxt.js worry about the CSS
 config.autoAddCss = false
 
-// You can add your icons directly in this plugin. See other examples for how you
-// can add other styles or just individual icons.
-library.add(faX)
-library.add(faYoutube, faSquareFacebook, faTwitter, faImdb)
-
-// This is important, we are going to let Nuxt worry about the CSS
-config.autoAddCss = false
+// Add icons to the library
+library.add(faX, faYoutube, faFacebookSquare, faTwitter, faImdb)
 
 export default defineNuxtPlugin((nuxtApp) => {
-	nuxtApp.vueApp.component('font-awesome-icon', FontAwesomeIcon, {})
+	nuxtApp.vueApp.component('font-awesome-icon', FontAwesomeIcon)
 })

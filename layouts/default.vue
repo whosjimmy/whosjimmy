@@ -1,19 +1,21 @@
 <template lang="pug">
 .text-center.my-0
-  app-header
-  br
-  .body
-    <transition name="slide" mode="out-in">
-      NuxtPage
-    </transition>
-  br
-  app-footer
+	app-header
+	br
+	.body
+		NuxtPage
+	br
+	app-footer
 </template>
 <script setup>
 import { useAuthStore } from '~/stores/auth'
+import { useDepartmentStore } from '~/store/departments'
 
 const authStore = useAuthStore()
+const departmentStore = useDepartmentStore() // Use the Pinia store
+
 authStore.initializeAuth()
+departmentStore.fetchDepartments()
 </script>
 <script>
 import Header from '~/components/Header.vue'
@@ -25,6 +27,7 @@ export default {
 	},
 }
 </script>
+
 <style>
 body {
 	padding-top: 0px;

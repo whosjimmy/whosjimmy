@@ -1,12 +1,34 @@
 // components/Login.vue
 <template>
-	<div>
+	<div class="container">
 		<form @submit.prevent="handleSubmit">
-			<input v-model="email" type="email" placeholder="Email" />
-			<input v-model="password" type="password" placeholder="Password" />
-			<button type="submit">Login</button>
+			<div class="row">
+				<div class="col-md-12">
+					<input v-model="email" placeholder="Email" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<input
+						v-model="password"
+						type="password"
+						placeholder="Password"
+					/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<button type="submit" @click="login">Sign In</button>
+				</div>
+			</div>
 		</form>
-		<p v-if="authStore.getAuthError">{{ authStore.getAuthError }}</p>
+		<div class="row">
+			<div class="col-md-12">
+				<p v-if="authStore.getAuthError">
+					{{ authStore.getAuthError }}
+				</p>
+			</div>
+		</div>
 	</div>
 </template>
 
