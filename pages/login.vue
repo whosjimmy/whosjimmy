@@ -1,4 +1,3 @@
-// pages/index.vue
 <template>
 	<div>
 		<Login v-if="!authStore.isAuthenticated" />
