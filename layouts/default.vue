@@ -1,13 +1,11 @@
 <template lang="pug">
 .text-center.my-0
-  app-header
-  br
-  .body
-    <transition name="slide" mode="out-in">
-      NuxtPage
-    </transition>
-  br
-  app-footer
+	app-header
+	br
+	.body
+		NuxtPage
+	br
+	app-footer
 </template>
 
 <script>
@@ -20,6 +18,7 @@ export default {
 	},
 }
 </script>
+
 <style>
 body {
 	padding-top: 0px;

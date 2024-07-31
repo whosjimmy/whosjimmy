@@ -30,6 +30,60 @@
                 //- | ({{film.Description}})
 </template>
 
+<script>
+import { mapState } from 'pinia'
+import { useDepartmentStore } from '~/store/departments'
+import Gallery from '~/components/Gallery.vue'
+import films from '~/public/film.json'
+export default {
+	data() {
+		return {
+			films,
+			sortedFilms: [],
+			departments: [],
+		}
+	},
+	created() {
+		this.processMovies()
+	},
+	computed: {
+		...mapState(useDepartmentStore, ['departments', ['departments']]),
+	},
+	methods: {
+		processMovies() {
+			let allMovies = []
+			if (this.departments.length > 0) {
+				this.departments.forEach((department) => {
+					department.Movies.forEach((movie) => {
+						allMovies.push({
+							...movie,
+							Department: department.Department,
+							Short: department.Short,
+						})
+					})
+				})
+			} else {
+				this.films.forEach((department) => {
+					department.Movies.forEach((movie) => {
+						allMovies.push({
+							...movie,
+							Department: department.Department,
+							Short: department.Short,
+						})
+					})
+				})
+			}
+			this.sortedFilms = allMovies.sort((a, b) => {
+				return new Date(b.Years[0]) - new Date(a.Years[0])
+			})
+		},
+	},
+	components: {
+		appGallery: Gallery,
+	},
+}
+</script>
+
 <style scoped>
 .card {
 	margin-bottom: 10px;
@@ -51,39 +105,3 @@
 	cursor: pointer;
 }
 </style>
-
-<script>
-import Gallery from '~/components/Gallery.vue'
-import films from '~/public/film.json'
-export default {
-	data() {
-		return {
-			films,
-			sortedFilms: [],
-		}
-	},
-	created() {
-		this.processMovies()
-	},
-	methods: {
-		processMovies() {
-			let allMovies = []
-			this.films.forEach((department) => {
-				department.Movies.forEach((movie) => {
-					allMovies.push({
-						...movie,
-						Department: department.Department,
-						Short: department.Short,
-					})
-				})
-			})
-			this.sortedFilms = allMovies.sort((a, b) => {
-				return new Date(b.Years[0]) - new Date(a.Years[0])
-			})
-		},
-	},
-	components: {
-		appGallery: Gallery,
-	},
-}
-</script>
