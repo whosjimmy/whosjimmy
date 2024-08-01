@@ -23,7 +23,7 @@
                 | {{film.Name}}
               p.card-text.text-center(v-if="film.Department")
                 | ({{film.Department}})
-                a.imdb(:href="film.Link" target="_blank")(v-if="film.Link")
+                a.imdb(:href="film.Link" target="_blank" v-if="film.Link")
                   br
                   font-awesome-icon.mr-2.ml-2.fa-2x(height="20px", :icon="['fab', 'imdb']")
                 //- br(v-if="film.Description")
