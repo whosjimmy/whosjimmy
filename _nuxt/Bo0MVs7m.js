@@ -1,1 +1,0 @@
-import{U as o,V as r}from"./C99qgpss.js";import{u as a}from"./BmFU9S45.js";const s=o((t,u)=>{const e=a();if(!e.user&&t.path!=="/login")return r("/login");if(e.user&&t.path==="/login")return r("/admin")});export{s as default};
