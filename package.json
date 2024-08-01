@@ -35,33 +35,31 @@
 		"@fortawesome/free-regular-svg-icons": "^6.5.2",
 		"@fortawesome/free-solid-svg-icons": "^6.5.2",
 		"@fortawesome/vue-fontawesome": "^3.0.8",
-		"@nuxt/scripts": "^0.6.4",
+		"@nuxt/scripts": "^0.6.5",
 		"@nuxtjs/dotenv": "^1.4.2",
 		"@nuxtjs/fontawesome": "^1.1.2",
 		"@pinia/nuxt": "^0.5.2",
 		"@vue/composition-api": "^1.6.2",
 		"@vuelidate/core": "^2.0.3",
 		"@vuelidate/validators": "^2.0.4",
-		"axios": "^0.27.2",
+		"axios": "^1.7.2",
 		"bootstrap": "^5.3.3",
 		"bootstrap-vue": "^2.23.1",
 		"firebase": "^10.12.4",
-		"npm": "^8.11.0",
 		"nuxt": "^3.12.4",
 		"pinia-plugin-persistedstate": "^3.2.1",
 		"pug": "^3.0.2",
 		"pug-plain-loader": "^1.1.0",
-		"vue": "^3.4.33",
-		"vue-recaptcha": "^2.0.2",
+		"vue": "^3.4.35",
 		"vue-router": "^4.4.1",
 		"vuelidate": "^0.7.4",
-		"eslint": "^8.57.0",
+		"eslint": "^9.8.0",
 		"eslint-plugin-nuxt": "^4.0.0",
 		"eslint-plugin-vue": "^9.25.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-prettier": "^5.2.1",
 		"prettier": "^3.3.3",
-		"webpack": "^4.46.0"
+		"webpack": "^5.93.0"
 	},
 	"devDependencies": {
 		"@nuxtjs/eslint-module": "^4.1.0",
@@ -70,6 +68,6 @@
 		"husky": "^9.0.11",
 		"node-sass": "^9.0.0",
 		"sass": "^1.77.8",
-		"sass-loader": "^10.1.1"
+		"sass-loader": "^16.0.0"
 	}
 }
