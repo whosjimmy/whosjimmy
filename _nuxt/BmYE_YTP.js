@@ -1,1 +1,0 @@
-import{U as o,V as r}from"./ukaTLDHB.js";import{u as a}from"./1H5dSiaA.js";const s=o((t,u)=>{const e=a();if(!e.user&&t.path!=="/login")return r("/login");if(e.user&&t.path==="/login")return r("/admin")});export{s as default};
