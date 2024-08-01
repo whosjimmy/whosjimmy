@@ -45,7 +45,6 @@
           | {{ sucessfulServerResponse }}
 </template>
 <script>
-// import VueRecaptcha from 'vue-recaptcha'
 import { useVuelidate } from '@vuelidate/core'
 import { required, email } from 'vuelidate/lib/validators'
 import axios from 'axios'

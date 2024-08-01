@@ -40,7 +40,6 @@ export default {
 		return {
 			films,
 			sortedFilms: [],
-			departments: [],
 		}
 	},
 	created() {
