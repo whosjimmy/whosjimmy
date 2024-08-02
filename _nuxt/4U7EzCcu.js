@@ -1,0 +1,1 @@
+import{U as o,V as r}from"./m7XQxICl.js";import{u as a}from"./Cozn7pK2.js";const s=o((t,u)=>{const e=a();if(!e.user&&t.path!=="/login")return r("/login");if(e.user&&t.path==="/login")return r("/admin")});export{s as default};
