@@ -45,7 +45,7 @@
 		"axios": "^1.7.3",
 		"bootstrap": "^5.3.3",
 		"bootstrap-vue": "^2.23.1",
-		"firebase": "^10.12.4",
+		"firebase": "^10.12.5",
 		"nuxt": "^3.12.4",
 		"pinia-plugin-persistedstate": "^3.2.1",
 		"pug": "^3.0.2",
