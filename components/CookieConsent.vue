@@ -25,7 +25,9 @@
 		</div>
 		<div class="row">
 			<div class="col text-right">
-				<button class="btn btn-secondary">Accept Custom</button>
+				<button class="btn btn-secondary" @click="acceptCustom">
+					Accept Custom
+				</button>
 			</div>
 			<div class="col text-left">
 				<button class="btn btn-primary" @click="acceptAll">
@@ -37,7 +39,6 @@
 </template>
 
 <script lang="ts">
-import { setCookie } from 'h3'
 export default {
 	data() {
 		return {
@@ -52,6 +53,10 @@ export default {
 		}
 	},
 	methods: {
+		handleConsentChecked() {
+			const consentChecked = useCookie('consentChecked')
+			consentChecked.value = 'true'
+		},
 		handleFunctionalCookies(value: string) {
 			const cookieFunctionalCookies = useCookie('functionalCookies')
 			cookieFunctionalCookies.value = value
@@ -63,6 +68,7 @@ export default {
 		acceptAll() {
 			this.handleFunctionalCookies('true')
 			this.handleTrackingCookies('true')
+			this.handleConsentChecked()
 			this.isChecked = true
 		},
 		acceptCustom() {
@@ -70,6 +76,7 @@ export default {
 			if (this.isCheckedTracking) {
 				this.handleTrackingCookies('true')
 			}
+			this.handleConsentChecked()
 			this.isChecked = true
 		},
 	},
