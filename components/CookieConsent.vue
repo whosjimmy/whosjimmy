@@ -64,6 +64,7 @@ export default {
 		handleTrackingCookies(value: string) {
 			const cookieTrackingCookies = useCookie('trackingCookies')
 			cookieTrackingCookies.value = value
+			//TODO: insure loading of tracking cookies without manual reload
 		},
 		acceptAll() {
 			this.handleFunctionalCookies('true')
