@@ -11,6 +11,9 @@ export default defineNuxtConfig({
 				process.env.FIREBASE_MESSAGING_SENDER_ID,
 			FIREBASE_APP_ID: process.env.FIREBASE_APP_ID,
 			FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID,
+			GOOGLE_TAG_MANAGER_KEY: process.env.GOOGLE_TAG_MANAGER_KEY,
+			GOOGLE_TAG_MANAGER_ENABLED: process.env.GOOGLE_TAG_MANAGER_ENABLED,
+			GOOGLE_TAG_MANAGER_DEBUG: process.env.GOOGLE_TAG_MANAGER_DEBUG,
 		},
 	},
 	app: {
@@ -74,19 +77,11 @@ export default defineNuxtConfig({
 	 ** Nuxt.js modules
 	 */
 	// modules: ['@pinia/nuxt'],
-
-	buildModules: ['@nuxtjs/dotenv', '@pinia/nuxt'],
 	/*
 	 ** Build configuration
 	 */
-	build: {
-		/*
-		 ** You can extend webpack config here
-		 */
-		// extend(config, ctx) {},
-	},
 	auth: {
-		// middleware: ['~/middleware/auth.js'],
+		middleware: ['~/middleware/auth.js'],
 		cookie: {
 			prefix: 'auth.',
 		},

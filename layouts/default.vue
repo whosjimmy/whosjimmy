@@ -6,6 +6,7 @@
 		NuxtPage
 	br
 	app-footer
+	app-cookie-consent
 </template>
 <script setup>
 import { useAuthStore } from '~/stores/auth'
@@ -20,10 +21,12 @@ departmentStore.fetchDepartments()
 <script>
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
+import CookieConsent from '~/components/CookieConsent.vue'
 export default {
 	components: {
 		appHeader: Header,
 		appFooter: Footer,
+		appCookieConsent: CookieConsent,
 	},
 }
 </script>

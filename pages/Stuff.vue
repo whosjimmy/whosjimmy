@@ -5,6 +5,7 @@
 </template>
 
 <script>
+//TODO: fix images not showing locally on reload of this page
 import Gallery from '~/components/Gallery.vue'
 
 export default {

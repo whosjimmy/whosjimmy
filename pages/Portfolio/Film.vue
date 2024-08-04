@@ -12,8 +12,8 @@
         .col-md-4.my-1(v-for="film in sortedFilms")
           .card.h-100
             .card-header.app-gallery(v-if="film?.Photos && film?.Photos?.length > 0")
-              appGallery(:images="film.Photos", :cover="film.Image")
-            .card-header(v-else)
+              appGallery(:name="film.Name", :images="film.Photos", :cover="film.Image")
+            .card-header(v-else  @click="gtmGalleryViewedFailedEvent(film)")
               img.card-img-top(:src="film?.Image")
             .card-body
               h5.card-title.text-center(v-if="film.Years[0] || film.Years[1]")
@@ -49,6 +49,14 @@ export default {
 		...mapState(useDepartmentStore, ['departments', ['departments']]),
 	},
 	methods: {
+		//TODO: confirm events captured on analytics
+		gtmGalleryViewedFailedEvent(film) {
+			this.$gtm.push({
+				event: 'gallery-viewed-failed',
+				film_name: film.Name,
+				page_path: '/portfolio/film',
+			})
+		},
 		processMovies() {
 			let allMovies = []
 			if (this.departments.length > 0) {

@@ -37,6 +37,12 @@ export default {
 		}
 	},
 	props: {
+		name: {
+			type: String,
+			default() {
+				return ''
+			},
+		},
 		images: {
 			type: Array,
 			default() {
@@ -57,6 +63,7 @@ export default {
 			},
 		},
 	},
+	mounted() {},
 	methods: {
 		nextImage() {
 			if (this.images.length - 1 > this.index) {
@@ -66,7 +73,19 @@ export default {
 			}
 			this.image = this.images[this.index]
 		},
-		toggleModal: function () {
+		toggleModal() {
+			if (this.show) {
+				this.$gtm.push({
+					event: 'gallery-closed',
+					name: this.name,
+				})
+			} else {
+				this.$gtm.push({
+					event: 'gallery-opened',
+					page_path: this.$route.path,
+					name: this.name,
+				})
+			}
 			this.show = !this.show
 		},
 	},
