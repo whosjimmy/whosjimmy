@@ -29,14 +29,14 @@ export default {
 				},
 				{
 					link: '/Forsale/Memorabilia',
-					image: 'thumbnail/for_sale/movie_memorabilia.jpg',
+					image: '/thumbnail/for_sale/movie_memorabilia.jpg',
 					alt: 'Movie Memorabilia',
 					title: 'Movie Memorabilia',
 					name: 'Movie Memorabilia',
 				},
 				{
 					link: '/Forsale/Stuff',
-					image: 'Clear_light_bulb.gif',
+					image: '/Clear_light_bulb.gif',
 					alt: 'Stuff For Sale',
 					title: 'Stuff For Sale',
 					name: 'Stuff',
