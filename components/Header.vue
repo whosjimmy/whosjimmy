@@ -8,9 +8,10 @@ nav.navbar.navbar-expand-md.navbar-light.bg-light
     data-target="#navbarNavDropdown"
     aria-controls="navbarNavDropdown"
     aria-expanded="false"
-    aria-label="Toggle navigation")
+    aria-label="Toggle navigation"
+    @click="visible=!visible")
     span.navbar-toggler-icon
-  .collapse.navbar-collapse(id="navbarNavDropdown")
+  .navbar-collapse(id="navbarNavDropdown" :class="!visible?'collapse':''" )
     ul.navbar-nav
       nuxt-link.btn.btn-light.nav-item(
         tag="li",
@@ -46,6 +47,7 @@ import { useAuthStore } from '~/stores/auth'
 export default {
 	data() {
 		return {
+			visible: false,
 			isAuth: false,
 		}
 	},
