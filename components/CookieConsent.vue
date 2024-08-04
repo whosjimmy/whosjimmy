@@ -88,6 +88,6 @@ export default {
 	z-index: 999;
 }
 input[type='checkbox'] {
-  margin-right: 10px;
+	margin-right: 10px;
 }
 </style>
