@@ -1,1 +1,0 @@
-import{V as o,W as r}from"./1dvsxfkY.js";import{u as a}from"./C5soG9XV.js";const s=o((t,u)=>{const e=a();if(!e.user&&t.path!=="/login")return r("/login");if(e.user&&t.path==="/login")return r("/admin")});export{s as default};
