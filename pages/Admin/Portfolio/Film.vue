@@ -1,218 +1,244 @@
 <template>
-	<div>
-		<form @submit.prevent="submitForm">
-			<!-- Department selection -->
-			<div class="row">
-				<div class="col-md-3">
-					<label for="department-select">Select Department:</label>
-				</div>
-				<div class="col-md-3">
-					<select
-						id="department-select"
-						v-model="selectedDepartmentIndex"
-					>
-						<option
-							v-for="(department, index) in departments"
-							:key="index"
-							:value="index"
+	<div class="row">
+		<div class="col-6">
+			<Film />
+		</div>
+		<div class="col-6">
+			<form @submit.prevent="submitForm">
+				<!-- Department selection -->
+				<div class="row">
+					<div class="col-md-3">
+						<label for="department-select"
+							>Select Department:</label
 						>
-							{{ department.Department }}
-						</option>
-					</select>
-				</div>
-
-				<div class="col-md-3">
-					<button
-						class="btn btn-primary"
-						type="button"
-						@click="addDepartment"
-					>
-						Add Department
-					</button>
-				</div>
-
-				<div class="col-md-3">
-					<button
-						class="btn btn-danger"
-						type="button"
-						@click="deleteDepartment"
-						v-if="selectedDepartmentIndex !== null"
-					>
-						Delete Department
-					</button>
-				</div>
-			</div>
-
-			<!-- Movie selection -->
-			<div class="row" v-if="selectedDepartmentIndex !== null">
-				<div class="col-md-3">
-					<label for="movie-select">Select Movie:</label>
-				</div>
-
-				<div class="col-md-3">
-					<select id="movie-select" v-model="selectedMovieIndex">
-						<option
-							v-for="(movie, index) in selectedDepartment?.Movies"
-							:key="index"
-							:value="index"
+					</div>
+					<div class="col-md-3">
+						<select
+							id="department-select"
+							v-model="selectedDepartmentIndex"
 						>
-							{{ movie.Name }}
-						</option>
-					</select>
-				</div>
+							<option
+								v-for="(department, index) in departments"
+								:key="index"
+								:value="index"
+							>
+								{{ department.Department }}
+							</option>
+						</select>
+					</div>
 
-				<div class="col-md-3">
-					<button
-						class="btn btn-primary"
-						type="button"
-						@click="addMovie"
-					>
-						Add Movie
-					</button>
-				</div>
+					<div class="col-md-3">
+						<button
+							class="btn btn-primary"
+							type="button"
+							@click="addDepartment"
+						>
+							Add Department
+						</button>
+					</div>
 
-				<div class="col-md-3">
-					<button
-						class="btn btn-danger"
-						type="button"
-						@click="deleteMovie"
-						v-if="selectedMovieIndex !== null"
-					>
-						Delete Movie
-					</button>
-				</div>
-			</div>
-
-			<!-- Movie details -->
-			<div
-				v-if="selectedMovieIndex !== null && selectedMovie"
-				class="movie-details"
-			>
-				<div class="row">
-					<div class="col-md-4">
-						<label>Name</label>
-					</div>
-					<div class="col-md-8">
-						<input
-							type="text"
-							v-model="selectedMovie.Name"
-							style="width: inherit"
-						/>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<label>Link</label>
-					</div>
-					<div class="col-md-8">
-						<input
-							type="text"
-							v-model="selectedMovie.Link"
-							style="width: inherit"
-						/>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<label>Cover Image</label>
-					</div>
-					<div class="col-md-8">
-						<input
-							type="text"
-							v-model="selectedMovie.Image"
-							style="width: inherit"
-						/>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<label>Years</label>
-					</div>
-					<div class="col-md-8">
-						<input
-							type="text"
-							v-model="selectedMovie.Years"
-							style="width: inherit"
-						/>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<label>Description</label>
-					</div>
-					<div class="col-md-8">
-						<textarea
-							v-model="selectedMovie.Description"
-							style="width: inherit"
-							rows="5"
-						></textarea>
+					<div class="col-md-3">
+						<button
+							class="btn btn-danger"
+							type="button"
+							@click="deleteDepartment"
+							v-if="selectedDepartmentIndex !== null"
+						>
+							Delete Department
+						</button>
 					</div>
 				</div>
 
-				<!-- Photos -->
-				<div v-if="selectedMovie.Photos && selectedMovie.Photos.length">
+				<!-- Movie selection -->
+				<div class="row" v-if="selectedDepartmentIndex !== null">
+					<div class="col-md-3">
+						<label for="movie-select">Select Movie:</label>
+					</div>
+
+					<div class="col-md-3">
+						<select id="movie-select" v-model="selectedMovieIndex">
+							<option
+								v-for="(
+									movie, index
+								) in selectedDepartment?.Movies"
+								:key="index"
+								:value="index"
+							>
+								{{ movie.Name }}
+							</option>
+						</select>
+					</div>
+
+					<div class="col-md-3">
+						<button
+							class="btn btn-primary"
+							type="button"
+							@click="addMovie"
+						>
+							Add Movie
+						</button>
+					</div>
+
+					<div class="col-md-3">
+						<button
+							class="btn btn-danger"
+							type="button"
+							@click="deleteMovie"
+							v-if="selectedMovieIndex !== null"
+						>
+							Delete Movie
+						</button>
+					</div>
+				</div>
+
+				<!-- Movie details -->
+				<div
+					v-if="selectedMovieIndex !== null && selectedMovie"
+					class="movie-details"
+				>
+					<!-- Other movie details inputs -->
 					<div class="row">
-						<div class="col-md-12">
-							<label>Photos</label>
-						</div>
-					</div>
-					<div
-						v-for="(photo, photoIndex) in selectedMovie.Photos"
-						:key="photoIndex"
-						class="photo row"
-					>
 						<div class="col-md-4">
-							<img :src="photo" height="100" />
+							<label>Name</label>
 						</div>
-
-						<div class="col-md-4">
+						<div class="col-md-8">
 							<input
 								type="text"
-								v-model="selectedMovie.Photos[photoIndex]"
+								v-model="selectedMovie.Name"
 								style="width: inherit"
 							/>
 						</div>
+					</div>
+					<div class="row">
 						<div class="col-md-4">
+							<label>Link</label>
+						</div>
+						<div class="col-md-8">
+							<input
+								type="text"
+								v-model="selectedMovie.Link"
+								style="width: inherit"
+							/>
+						</div>
+					</div>
+					<!-- Cover Image -->
+					<div class="row">
+						<div class="col-md-4">
+							<label>Cover Image</label>
+						</div>
+						<div class="col-md-8">
+							<div class="row">
+								<div class="col-2">
+									<img
+										:src="selectedMovie.Image"
+										height="100"
+									/>
+								</div>
+								<div class="col">
+									<input type="file" @change="onFileChange" />
+									<input
+										type="text"
+										v-model="selectedMovie.Image"
+										style="width: inherit"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<label>Years</label>
+						</div>
+						<div class="col-md-8">
+							<input
+								type="text"
+								v-model="selectedMovie.Years"
+								style="width: inherit"
+							/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<label>Description</label>
+						</div>
+						<div class="col-md-8">
+							<textarea
+								v-model="selectedMovie.Description"
+								style="width: inherit"
+								rows="5"
+							></textarea>
+						</div>
+					</div>
+
+					<!-- Photos -->
+					<div
+						v-if="
+							selectedMovie.Photos && selectedMovie.Photos.length
+						"
+					>
+						<div class="row">
+							<div class="col-md-12">
+								<label>Photos</label>
+							</div>
+						</div>
+						<div
+							v-for="(photo, photoIndex) in selectedMovie.Photos"
+							:key="photoIndex"
+							class="photo row"
+						>
+							<div class="col-md-4">
+								<img :src="photo" height="100" />
+							</div>
+							<div class="col-md-4">
+								<input
+									type="text"
+									v-model="selectedMovie.Photos[photoIndex]"
+									style="width: inherit"
+								/>
+							</div>
+							<div class="col-md-4">
+								<button
+									class="btn btn-danger"
+									type="button"
+									@click="deletePhoto(photoIndex)"
+								>
+									Delete Photo
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<button type="button" @click="addPhoto">
+								Add Photo
+							</button>
+							<input type="file" @change="onPhotoFileChange" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
 							<button
-								class="btn btn-danger"
+								class="btn btn-primary"
 								type="button"
-								@click="deletePhoto(photoIndex)"
+								@click="saveMovie"
 							>
-								Delete Photo
+								Save Movie
+							</button>
+						</div>
+						<div class="col-md-6">
+							<button
+								class="btn btn-primary"
+								type="button"
+								@click="saveAllMovies"
+							>
+								Save All Departments
 							</button>
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-12">
-						<button type="button" @click="addPhoto">
-							Add Photo
-						</button>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-6">
-						<button
-							class="btn btn-primary"
-							type="button"
-							@click="saveMovie"
-						>
-							Save Movie
-						</button>
-					</div>
-					<div class="col-md-6">
-						<button
-							class="btn btn-primary"
-							type="button"
-							@click="saveAllMovies"
-						>
-							Save All Departments
-						</button>
-					</div>
-				</div>
-			</div>
-		</form>
+			</form>
+		</div>
 	</div>
 </template>
 
@@ -225,14 +251,16 @@ definePageMeta({
 <script>
 import { mapState, mapActions } from 'pinia'
 import { useDepartmentStore } from '~/stores/departments'
-import { useAuthStore } from '~/stores/auth'
-import { useRouter } from 'vue-router'
+import { uploadImage } from '~/utils/firebaseStorage'
+import Film from '~/pages/Portfolio/Film'
 
 export default {
 	data() {
 		return {
 			selectedDepartmentIndex: null,
 			selectedMovieIndex: null,
+			coverImageFile: null,
+			photoFile: null,
 		}
 	},
 	computed: {
@@ -249,8 +277,11 @@ export default {
 			}
 			return null
 		},
-		isAuthenticated() {
-			return this.$auth.isAuthenticated
+	},
+	watch: {
+		selectedDepartmentIndex() {
+			// Reset selected movie when department changes
+			this.selectedMovieIndex = 0
 		},
 	},
 	methods: {
@@ -308,6 +339,34 @@ export default {
 				this.selectedMovie.Photos.splice(photoIndex, 1)
 			}
 		},
+		async onFileChange(event) {
+			const file = event.target.files[0]
+			if (file) {
+				try {
+					const url = await uploadImage(
+						file,
+						`movies/${this.selectedDepartment.id}/${this.selectedMovieIndex}/coverImages/${file.name}`
+					)
+					this.selectedMovie.Image = url
+				} catch (error) {
+					console.error('Error uploading cover image:', error)
+				}
+			}
+		},
+		async onPhotoFileChange(event) {
+			const file = event.target.files[0]
+			if (file) {
+				try {
+					const url = await uploadImage(
+						file,
+						`movies/${this.selectedDepartment.id}/${this.selectedMovieIndex}/photos/${file.name}`
+					)
+					this.selectedMovie.Photos.push(url)
+				} catch (error) {
+					console.error('Error uploading photo:', error)
+				}
+			}
+		},
 		async saveMovie() {
 			if (this.selectedDepartment && this.selectedMovie) {
 				await this.saveDepartment({
@@ -336,10 +395,7 @@ export default {
 	mounted() {
 		this.selectedDepartmentIndex = 0
 		this.selectedMovieIndex = 0
-		//TODO: fix this
-		// if (!this.isAuthenticated) {
-		// 	this.$router.push('/admin/login')
-		// }
+		// console.log('Mounted Film page', this.departments)
 	},
 }
 </script>
