@@ -47,7 +47,7 @@
 					input.btn.btn-secondary.btn-send-message(type="submit", v-else, disabled)
 		.row(v-else)
 			.col-12.p-2
-				img.thank-you-image(src="/film/big_white/115-1560_IMG.jpg")
+				img.thank-you-image(src="/film/big_white/115-1560_IMG.JPG")
 			.col-12.p-2
 				| {{ sucessfulServerResponse }}
 			.col-12.p-2
