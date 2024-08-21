@@ -3,7 +3,7 @@
 	form(
 		@submit.prevent="submit"
 	)
-		.row(v-if="!sucessfulServerResponse")
+		.row(v-if="sucessfulServerResponse")
 			.col-12.pt-2
 				.form-group
 					input#name.form-control(type="text", v-model="name" name="name", placeholder="Name") 
