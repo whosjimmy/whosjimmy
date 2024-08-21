@@ -1,1 +1,0 @@
-import{c as s,o as c,a as e,_ as t}from"./BYmvJ9-H.js";const o=""+new URL("JIMMY_CLAWS.C-7UxAhI.jpg",import.meta.url).href,r={class:"container-fluid"},a=e("div",{class:"card"},[e("div",{class:"card-header"},[e("img",{src:o,width:"100%"})])],-1),n=[a];function d(_,l){return c(),s("div",r,n)}const i={},m=t(i,[["render",d]]);export{m as default};

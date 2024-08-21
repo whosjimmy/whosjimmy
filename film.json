@@ -17,13 +17,7 @@
 					"/film/tooth_fairy/toothfairy_wideweb__470x311,0.jpg",
 					"/film/tooth_fairy/IMG_2012.JPG"
 				]
-			}
-		]
-	},
-	{
-		"Department": "Art department",
-		"Short": "?",
-		"Movies": [
+			},
 			{
 				"Name": "X-Men: The Last Stand",
 				"Link": "https://www.imdb.com/title/tt0376994/",
@@ -121,13 +115,7 @@
 					"/film/body_parts/fango body parts.jpg",
 					"/film/body_parts/vlcsnap-2010-10-12-10h36m24s49.png"
 				]
-			}
-		]
-	},
-	{
-		"Department": "Makeup and Effects",
-		"Short": "MUFX",
-		"Movies": [
+			},
 			{
 				"Name": "Yellowjackets",
 				"Link": "https://www.imdb.com/title/tt11041332/",
