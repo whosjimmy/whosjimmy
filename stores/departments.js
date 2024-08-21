@@ -1,3 +1,4 @@
+// stores/departments.js
 import { defineStore } from 'pinia'
 import { useNuxtApp } from '#app'
 import {
@@ -50,6 +51,7 @@ export const useDepartmentStore = defineStore('departments', {
 					'departments'
 				)
 				const departmentDocs = await getDocs(departmentsCollection)
+				// console.log('departmentDocs', departmentDocs)
 				const departments = departmentDocs.docs.map((doc) => ({
 					id: doc.id,
 					...doc.data(),

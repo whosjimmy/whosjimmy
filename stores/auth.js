@@ -50,14 +50,17 @@ export const useAuthStore = defineStore('auth', {
 			const { $auth } = useNuxtApp()
 			onAuthStateChanged($auth, (user) => {
 				this.user = user || null
-				this.loading = false
 			})
+		},
+		setLoading(loading) {
+			this.loading = loading
 		},
 	},
 	getters: {
 		isAuthenticated: (state) => !!state.user,
 		getUser: (state) => state.user,
 		getAuthError: (state) => state.authError,
+		getLoading: (state) => state.loading,
 	},
 	persist: {
 		enabled: true,
