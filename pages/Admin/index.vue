@@ -6,7 +6,10 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md">
+				<nuxt-link to="/Admin/Home">Home</nuxt-link>
+			</div>
+			<div class="col-md">
 				<nuxt-link to="/Admin/Portfolio/Film">Film</nuxt-link>
 			</div>
 		</div>
@@ -29,7 +32,6 @@ import { mapState, mapActions } from 'pinia'
 import { useAuthStore } from '~/stores/auth'
 
 export default {
-	// middleware: 'auth', // TODO: nuxt3 auth seems to need to use setup but it won't generate with it
 	computed: {
 		...mapState(useAuthStore, {
 			user: 'getUser',
