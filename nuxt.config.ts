@@ -14,6 +14,7 @@ export default defineNuxtConfig({
 			GOOGLE_TAG_MANAGER_KEY: process.env.GOOGLE_TAG_MANAGER_KEY,
 			GOOGLE_TAG_MANAGER_ENABLED: process.env.GOOGLE_TAG_MANAGER_ENABLED,
 			GOOGLE_TAG_MANAGER_DEBUG: process.env.GOOGLE_TAG_MANAGER_DEBUG,
+			SITE_TITLE: process.env.SITE_TITLE,
 		},
 	},
 	app: {
@@ -22,7 +23,7 @@ export default defineNuxtConfig({
 		 ** Headers of the page
 		 */
 		head: {
-			title: "Who's Jimmy",
+			title: process.env.SITE_TITLE || "Who's Jimmy",
 			meta: [
 				{ charset: 'utf-8' },
 				{
