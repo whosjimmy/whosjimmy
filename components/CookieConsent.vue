@@ -39,6 +39,8 @@
 </template>
 
 <script lang="ts">
+import { mapActions } from 'pinia'
+import { useGeneralStore } from '~/stores/general'
 export default {
 	data() {
 		return {
@@ -53,6 +55,7 @@ export default {
 		}
 	},
 	methods: {
+		...mapActions(useGeneralStore, ['setTrackingCookiesEnabled']),
 		handleConsentChecked() {
 			const consentChecked = useCookie('consentChecked')
 			consentChecked.value = 'true'
@@ -64,6 +67,7 @@ export default {
 		handleTrackingCookies(value: string) {
 			const cookieTrackingCookies = useCookie('trackingCookies')
 			cookieTrackingCookies.value = value
+			this.setTrackingCookiesEnabled(value)
 			//TODO: insure loading of tracking cookies without manual reload
 		},
 		acceptAll() {
