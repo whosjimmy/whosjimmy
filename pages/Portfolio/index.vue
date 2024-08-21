@@ -1,19 +1,19 @@
 <template lang="pug">
 .container-fluid 
-  .col-md-12.row
-    .col-md-4(v-for="page in pages")
-      .card.floating-card
-        .card-header
-          nuxt-link(
-            tag="img",
-            activeClass="active",
-            :to="page.link",
-            width="100%"
-          )
-            img(:src="page.image", :alt="page.alt" width="100%")
-        .card-body
-          h5.card-title.text-center
-            | {{ page.name }}
+	.col-md-12.row
+		.col-md-4(v-for="page in pages")
+			nuxt-link(
+				tag="img",
+				activeClass="active",
+				:to="page.link",
+				width="100%"
+				)
+				.card.floating-card
+					.card-header
+						img(:src="page.image", :alt="page.alt" width="100%")
+					.card-body
+						h5.card-title.text-center
+							| {{ page.name }}
 </template>
 <script>
 export default {
@@ -55,6 +55,13 @@ export default {
 					title: 'Movies and Television',
 					name: 'Movies and Television',
 				},
+				{
+					link: '/Portfolio/Videos',
+					image: '/youtube-coming-soon.jpg',
+					alt: 'Instructional Videos   Coming Soon',
+					title: 'Instructional Videos   Coming Soon',
+					name: 'Instructional Videos   Coming Soon',
+				},
 			],
 		}
 	},
@@ -64,5 +71,9 @@ export default {
 <style scoped>
 .card {
 	margin-bottom: 10px;
+}
+a {
+	text-decoration: none;
+	color: #000;
 }
 </style>
