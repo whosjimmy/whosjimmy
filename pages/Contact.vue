@@ -1,48 +1,57 @@
 <template lang="pug">
-.container-fluid
-  .row
-    .col-lg-12.pt-2
-      form(
-        @submit.prevent="submit"
-      )
-        .form-group
-          input#name.form-control(type="text", v-model="name" name="name", placeholder="Name") 
-          .error(v-if="v$.name?.required.$invalid") name is required.
-        .form-group
-          input#email.form-control(
-            v-model="email"
-            type="text",
-            name="email",
-            placeholder="Email"
-          )
-          .error(v-if="v$.email?.required.$invalid") email is required.
-        .form-group
-          input#subject.form-control(
-            v-model="subject",
-            type="text",
-            name="subject",
-            placeholder="Subject"
-          )
-          .error(v-if="v$.subject?.required.$invalid") subject is required.
-        .form-group
-          textarea#message.form-control(
-            v-model="message",
-            name="message",
-            cols="30",
-            rows="7",
-            placeholder="Message..."
-          )
-          .error(v-if="v$.message?.required.$invalid") message is required.
-        .form-group
-          input.btn.btn-primary.btn-send-message(
-			v-if="isValid",
-            type="submit",
-            value="Send Message"
-          )
-          input.btn.btn-secondary.btn-send-message(type="submit", v-else, disabled)
-          br
-          br
-          | {{ sucessfulServerResponse }}
+.container-fluid.my-auto.h-100
+	form(
+		@submit.prevent="submit"
+	)
+		.row(v-if="!sucessfulServerResponse")
+			.col-12.pt-2
+				.form-group
+					input#name.form-control(type="text", v-model="name" name="name", placeholder="Name") 
+					.error(v-if="v$.name?.required.$invalid") name is required.
+			.col-12.pt-2
+				.form-group
+					input#email.form-control(
+						v-model="email"
+						type="text",
+						name="email",
+						placeholder="Email"
+					)
+					.error(v-if="v$.email?.required.$invalid") email is required.
+					.error(v-if="v$.email?.email.$invalid") valid email required.
+			.col-12.pt-2
+				.form-group
+					input#subject.form-control(
+						v-model="subject",
+						type="text",
+						name="subject",
+						placeholder="Subject"
+					)
+					.error(v-if="v$.subject?.required.$invalid") subject is required.
+			.col-12.pt-2
+				.form-group
+					textarea#message.form-control(
+						v-model="message",
+						name="message",
+						cols="30",
+						rows="7",
+						placeholder="Message..."
+					)
+					.error(v-if="v$.message?.required.$invalid") message is required.
+			.col-12.pt-2
+				.form-group
+					input.btn.btn-primary.btn-send-message(
+						v-if="isValid",
+						type="submit",
+						value="Send Message"
+					)
+					input.btn.btn-secondary.btn-send-message(type="submit", v-else, disabled)
+		.row(v-else)
+			.col-12.p-2
+				img.thank-you-image(src="/film/big_white/115-1560_IMG.jpg")
+			.col-12.p-2
+				| {{ sucessfulServerResponse }}
+			.col-12.p-2
+				button.btn.btn-primary(@click="$router.push('/')") Back to Home
 </template>
 <script>
 import { useVuelidate } from '@vuelidate/core'
@@ -59,7 +68,7 @@ export default {
 			email: '',
 			subject: '',
 			message: '',
-			sucessfulServerResponse: '',
+			sucessfulServerResponse: 'Message Sent to Jimmy!',
 			serverError: '',
 			submitStatus: null,
 			isValid: false,
@@ -124,7 +133,7 @@ export default {
 					})
 					.then((response) => {
 						// this.sucessfulServerResponse = response.data.message;
-						this.sucessfulServerResponse = 'Message Sent'
+						this.sucessfulServerResponse = 'Message Sent to Jimmy!'
 						this.serverError = ''
 						this.resetForm()
 					})
@@ -172,5 +181,8 @@ export default {
 	color: #f1f1f1;
 	padding: 20px;
 	border-radius: 3px;
+}
+.thank-you-image {
+	width: 50%;
 }
 </style>
