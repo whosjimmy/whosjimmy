@@ -62,7 +62,7 @@
 		"vue": "^3.4.38",
 		"vue-router": "^4.4.3",
 		"vuelidate": "^0.7.4",
-		"webpack": "^5.93.0"
+		"webpack": "^5.94.0"
 	},
 	"devDependencies": {
 		"@nuxtjs/eslint-module": "^4.1.0",
