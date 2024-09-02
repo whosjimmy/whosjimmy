@@ -1,1 +1,0 @@
-import{_ as t,c as o,d as n,e as c,f as _,o as a,g as r}from"./Drft0GOs.js";const s={};function i(d,l){const e=_;return a(),o("div",null,[n(e,{to:"/Admin/Portfolio/Film"},{default:c(()=>[r("Film")]),_:1})])}const m=t(s,[["render",i]]);export{m as default};
