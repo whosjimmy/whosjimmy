@@ -1,0 +1,1 @@
+import{M as s,_ as e,c as t,o as c,b as o}from"./D9fNCe0H.js";const n=s("/youtube-coming-soon.jpg"),_={},i=o("img",{src:n},null,-1),r=o("div",null,"Coming soon!",-1),a=[i,r];function l(d,u){return c(),t("div",null,a)}const p=e(_,[["render",l]]);export{p as default};
