@@ -835,7 +835,7 @@
   resolved "https://registry.yarnpkg.com/@firebase/auth-types/-/auth-types-0.12.2.tgz#f12d890585866e53b6ab18b16fa4d425c52eee6e"
   integrity sha512-qsEBaRMoGvHO10unlDJhaKSuPn4pyoTtlQuP1ghZfzB6rNQPuhp/N/DcFZxm9i4v0SogjCbf9reWupwIvfmH6w==
 
-"@firebase/auth@1.7.7", "@firebase/auth@^1.7.6":
+"@firebase/auth@1.7.7":
   version "1.7.7"
   resolved "https://registry.yarnpkg.com/@firebase/auth/-/auth-1.7.7.tgz#5df254350fee576288c4d32a65599b0352b6adeb"
   integrity sha512-gMB0uRRNiIvYorEDLtIq1mc7x5D080EsoghTIph9xnbLqcQS3qRBREEC2o21nMEhviAeiGJMelRkKhAkkggjmA==
@@ -845,6 +845,17 @@
     "@firebase/util" "1.9.7"
     tslib "^2.1.0"
     undici "5.28.4"
+
+"@firebase/auth@^1.7.8":
+  version "1.7.8"
+  resolved "https://registry.yarnpkg.com/@firebase/auth/-/auth-1.7.8.tgz#554e90620c2d6a8db332898879dbdab861f969b7"
+  integrity sha512-1KJlDrTrEEFTIBj9MxjAWjQ4skecBD4bmoayQ0l14QDbNc1a8qGbi+MFSJkH7O6VnGE6bTMcWSw6RrQNecqKaw==
+  dependencies:
+    "@firebase/component" "0.6.8"
+    "@firebase/logger" "0.4.2"
+    "@firebase/util" "1.9.7"
+    tslib "^2.1.0"
+    undici "6.19.7"
 
 "@firebase/component@0.6.8":
   version "0.6.8"
@@ -8125,6 +8136,11 @@ undici@5.28.4, undici@^5.28.4:
   integrity sha512-72RFADWFqKmUb2hmmvNODKL3p9hcB6Gt2DOQMis1SEBaV6a4MH8soBvzg+95CYhCKPFedut2JY9bMfrDl9D23g==
   dependencies:
     "@fastify/busboy" "^2.0.0"
+
+undici@6.19.7:
+  version "6.19.7"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-6.19.7.tgz#7d4cf26dc689838aa8b6753a3c5c4288fc1e0216"
+  integrity sha512-HR3W/bMGPSr90i8AAp2C4DM3wChFdJPLrWYpIS++LxS8K+W535qftjt+4MyjNYHeWabMj1nvtmLIi7l++iq91A==
 
 unenv@^1.10.0, unenv@^1.9.0:
   version "1.10.0"
