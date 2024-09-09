@@ -1587,19 +1587,19 @@
     unimport "^3.11.1"
     untyped "^1.4.2"
 
-"@nuxt/scripts@^0.8.3":
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/@nuxt/scripts/-/scripts-0.8.3.tgz#d84f75d5693f6363147258d81d5ad25db0f57d41"
-  integrity sha512-1Vxwd964oyfzcUaJvVqpShuCWn8bdNKwqNfUq5KwQEpC8lR6IItvHh6RK/W5ZzhUk6/b2MizSTJ82chYILT0Ow==
+"@nuxt/scripts@^0.8.4":
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/@nuxt/scripts/-/scripts-0.8.4.tgz#bf86500fe8cabc4429a3c8cd6ec5e84a05b34b8f"
+  integrity sha512-OHsytvxTCgBvVWBCXOWklouCi5nNsD2yFAmEIn6YJMc98zadmlnqTnaKmroRuzxqWJRsNboSBqllPl8mJpztDQ==
   dependencies:
     "@nuxt/devtools-kit" "^1.4.1"
     "@nuxt/devtools-ui-kit" "^1.4.1"
     "@nuxt/kit" "^3.13.1"
-    "@types/google.maps" "^3.57.0"
+    "@types/google.maps" "^3.58.0"
     "@types/stripe-v3" "^3.1.33"
     "@types/vimeo__player" "^2.18.3"
     "@types/youtube" "^0.1.0"
-    "@unhead/vue" "^1.10.4"
+    "@unhead/vue" "1.11.0-beta.1"
     "@vueuse/core" "^11.0.3"
     consola "^3.2.3"
     defu "^6.1.4"
@@ -1611,14 +1611,14 @@
     pathe "^1.1.2"
     pkg-types "^1.2.0"
     semver "^7.6.3"
-    shiki "1.16.1"
+    shiki "1.16.2"
     sirv "^2.0.4"
     std-env "^3.7.0"
     third-party-capital "2.3.0"
     ufo "^1.5.4"
     unimport "^3.11.1"
     unplugin "^1.13.1"
-    unstorage "^1.11.0"
+    unstorage "^1.12.0"
     valibot "^0.41.0"
 
 "@nuxt/telemetry@^2.5.4":
@@ -2132,10 +2132,10 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.21.2.tgz#e4291e3c1bc637083f87936c333cdbcad22af63b"
   integrity sha512-6UUxd0+SKomjdzuAcp+HAmxw1FlGBnl1v2yEPSabtx4lBfdXHDVsW7+lQkgz9cNFJGY3AWR7+V8P5BqkD9L9nA==
 
-"@shikijs/core@1.16.1":
-  version "1.16.1"
-  resolved "https://registry.yarnpkg.com/@shikijs/core/-/core-1.16.1.tgz#ecc370c55a6d0cc5c559f29f64489156ec6dfd59"
-  integrity sha512-aI0hBtw+a6KsJp2jcD4YuQqKpeCbURMZbhHVozDknJpm+KJqeMRkEnfBC8BaKE/5XC+uofPgCLsa/TkTk0Ba0w==
+"@shikijs/core@1.16.2":
+  version "1.16.2"
+  resolved "https://registry.yarnpkg.com/@shikijs/core/-/core-1.16.2.tgz#67182b0eb7e2c3aedcf47e24acb893bca352c869"
+  integrity sha512-XSVH5OZCvE4WLMgdoBqfPMYmGHGmCC3OgZhw0S7KcSi2XKZ+5oHGe71GFnTljgdOxvxx5WrRks6QoTLKrl1eAA==
   dependencies:
     "@shikijs/vscode-textmate" "^9.2.0"
     "@types/hast" "^3.0.4"
@@ -2190,10 +2190,10 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.5.tgz#a6ce3e556e00fd9895dd872dd172ad0d4bd687f4"
   integrity sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==
 
-"@types/google.maps@^3.57.0":
-  version "3.57.0"
-  resolved "https://registry.yarnpkg.com/@types/google.maps/-/google.maps-3.57.0.tgz#3ed0290126a90fa95587de02babab25b1ab34559"
-  integrity sha512-8X/HqaUXob25aVslslO84p9ESInpOQd3lMxW085IxqZZ1opRuFfwx2/c1JIUFVvCkkK+sCQHFDJ+Kw60Gsi1qA==
+"@types/google.maps@^3.58.0":
+  version "3.58.0"
+  resolved "https://registry.yarnpkg.com/@types/google.maps/-/google.maps-3.58.0.tgz#98de7bc271cc9edf81dbe8c317fc9ce130b99311"
+  integrity sha512-rZPrbNHoGxeY70uuQYFLGQqcz5mLd3pZy0u286GSugvN7PLFsHNRF2wN2QXtUgNiC33IC0LX+MD3LGAC3wN7Eg==
 
 "@types/hast@^3.0.4":
   version "3.0.4"
@@ -2300,10 +2300,26 @@
     "@unhead/schema" "1.10.4"
     "@unhead/shared" "1.10.4"
 
+"@unhead/dom@1.11.0-beta.1":
+  version "1.11.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@unhead/dom/-/dom-1.11.0-beta.1.tgz#15e912a0ceb16b3b1e510120ea041eb8ddd2c2ab"
+  integrity sha512-ucKwEwkfcbTcfxqSKGF8m6HYwtEWW78K9ttmO1wc0y8mAOrJofMYELQyw2O6XDkr2TVwoKNfxpcA/PR9PEcN2g==
+  dependencies:
+    "@unhead/schema" "1.11.0-beta.1"
+    "@unhead/shared" "1.11.0-beta.1"
+
 "@unhead/schema@1.10.4":
   version "1.10.4"
   resolved "https://registry.yarnpkg.com/@unhead/schema/-/schema-1.10.4.tgz#da1af88f5426d6589bc6f7ffdd6cb5b8e62183c5"
   integrity sha512-nX9sJgKPy2t4GHB9ky/vkMLbYqXl9Num5NZToTr0rKrIGkshzHhUrbn/EiHreIjcGI1eIpu+edniCDIwGTJgmw==
+  dependencies:
+    hookable "^5.5.3"
+    zhead "^2.2.4"
+
+"@unhead/schema@1.11.0-beta.1":
+  version "1.11.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@unhead/schema/-/schema-1.11.0-beta.1.tgz#ddb7bda0f82ed82ff9349de82ced69ab15f38f67"
+  integrity sha512-SyOHQwmjEv2yoDcasha6xtzCV7/b81pDtk69izVBvrbHrW6IAUYfpUcgW0eroMj3wmbAOICvaU6O6NXGdsZv4w==
   dependencies:
     hookable "^5.5.3"
     zhead "^2.2.4"
@@ -2315,6 +2331,13 @@
   dependencies:
     "@unhead/schema" "1.10.4"
 
+"@unhead/shared@1.11.0-beta.1":
+  version "1.11.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@unhead/shared/-/shared-1.11.0-beta.1.tgz#b9cb32f52d0e381c46deaaa7975b18366d4aac9e"
+  integrity sha512-VjVwAJ7mES6ziV2V2XYaWxfgKIcdqLkllfHVp8MrYm3DpCWUC37ZwsczGpibJAfoKLS+kP8d3noF8b/9pc3HAQ==
+  dependencies:
+    "@unhead/schema" "1.11.0-beta.1"
+
 "@unhead/ssr@^1.10.4":
   version "1.10.4"
   resolved "https://registry.yarnpkg.com/@unhead/ssr/-/ssr-1.10.4.tgz#e2ec53a06055afe4b48e3762b4160152ec0a5b69"
@@ -2322,6 +2345,17 @@
   dependencies:
     "@unhead/schema" "1.10.4"
     "@unhead/shared" "1.10.4"
+
+"@unhead/vue@1.11.0-beta.1":
+  version "1.11.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@unhead/vue/-/vue-1.11.0-beta.1.tgz#0dbc1761196802d52b3784d0faeb402ab71d6411"
+  integrity sha512-1aUZaNKU4TAT2bS01YMPfcX5LLfrDdsrmXmhfsLVkdJnkXRqjejzG1/f+NmsniAKv0/eXU9nniJeMOHUb76nng==
+  dependencies:
+    "@unhead/schema" "1.11.0-beta.1"
+    "@unhead/shared" "1.11.0-beta.1"
+    defu "^6.1.4"
+    hookable "^5.5.3"
+    unhead "1.11.0-beta.1"
 
 "@unhead/vue@^1.10.4":
   version "1.10.4"
@@ -7700,12 +7734,12 @@ shell-quote@^1.8.1:
   resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.8.1.tgz#6dbf4db75515ad5bac63b4f1894c3a154c766680"
   integrity sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==
 
-shiki@1.16.1:
-  version "1.16.1"
-  resolved "https://registry.yarnpkg.com/shiki/-/shiki-1.16.1.tgz#4d047d30f36ac11c8ae18041fbe02b6ddb346f62"
-  integrity sha512-tCJIMaxDVB1mEIJ5TvfZU7kCPB5eo9fli5+21Olc/bmyv+w8kye3JOp+LZRmGkAyT71hrkefQhTiY+o9mBikRQ==
+shiki@1.16.2:
+  version "1.16.2"
+  resolved "https://registry.yarnpkg.com/shiki/-/shiki-1.16.2.tgz#6cb6ec67bfd518d720840b9fafc714419253e0e0"
+  integrity sha512-gSym0hZf5a1U0iDPsdoOAZbvoi+e0c6c3NKAi03FoSLTm7oG20tum29+gk0wzzivOasn3loxfGUPT+jZXIUbWg==
   dependencies:
-    "@shikijs/core" "1.16.1"
+    "@shikijs/core" "1.16.2"
     "@shikijs/vscode-textmate" "^9.2.0"
     "@types/hast" "^3.0.4"
 
@@ -8322,6 +8356,16 @@ unhead@1.10.4:
     "@unhead/shared" "1.10.4"
     hookable "^5.5.3"
 
+unhead@1.11.0-beta.1:
+  version "1.11.0-beta.1"
+  resolved "https://registry.yarnpkg.com/unhead/-/unhead-1.11.0-beta.1.tgz#2241d5005a12bb34b08631553e22a76fb3d328c4"
+  integrity sha512-pUhuWQ9LaDRzZ7Xz9YeMSEp0dVSJ8JlGdNVXUqfWzOqA3AZv8BZPVUH5mZbbaN2gWIOyEdCIGIXoCz0mBd21SQ==
+  dependencies:
+    "@unhead/dom" "1.11.0-beta.1"
+    "@unhead/schema" "1.11.0-beta.1"
+    "@unhead/shared" "1.11.0-beta.1"
+    hookable "^5.5.3"
+
 unicorn-magic@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/unicorn-magic/-/unicorn-magic-0.1.0.tgz#1bb9a51c823aaf9d73a8bfcd3d1a23dde94b0ce4"
@@ -8433,10 +8477,10 @@ unplugin@^1.10.0, unplugin@^1.12.1, unplugin@^1.12.2, unplugin@^1.12.3, unplugin
     acorn "^8.12.1"
     webpack-virtual-modules "^0.6.2"
 
-unstorage@^1.10.2, unstorage@^1.11.0:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/unstorage/-/unstorage-1.11.1.tgz#6635ddb07ade7a34d42f9193a2d314cae2137841"
-  integrity sha512-3NVszU4MGlO21WWnkSq0xnPVMHnMyB5DdJQyGRAg/DUZVeQjWRinLOia89iw5KGpllRtoA5+N+xnq75MAsPAOA==
+unstorage@^1.10.2, unstorage@^1.12.0:
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/unstorage/-/unstorage-1.12.0.tgz#a215895dfdef01ffb8ff529bb3869dbf947d8498"
+  integrity sha512-ARZYTXiC+e8z3lRM7/qY9oyaOkaozCeNd2xoz7sYK9fv7OLGhVsf+BZbmASqiK/HTZ7T6eAlnVq9JynZppyk3w==
   dependencies:
     anymatch "^3.1.3"
     chokidar "^3.6.0"
