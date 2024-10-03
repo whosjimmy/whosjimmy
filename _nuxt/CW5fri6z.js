@@ -1,1 +1,0 @@
-import{_ as o,c as n,d as c,e as r,f as s,o as _,g as a}from"./BatNbp67.js";const i={};function d(l,e){const t=s;return _(),n("div",null,[c(t,{to:"/Admin/Portfolio/Film"},{default:r(()=>e[0]||(e[0]=[a("Film")])),_:1})])}const m=o(i,[["render",d]]);export{m as default};
