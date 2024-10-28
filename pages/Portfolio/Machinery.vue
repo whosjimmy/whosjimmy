@@ -14,6 +14,9 @@
 <script>
 import Gallery from '~/components/Gallery.vue'
 export default {
+	components: {
+		appGallery: Gallery,
+	},
 	data() {
 		return {
 			images: [
@@ -22,9 +25,6 @@ export default {
 			],
 			info: ['Shelby Cobra', 'Ignition sensor mount'],
 		}
-	},
-	components: {
-		appGallery: Gallery,
 	},
 }
 </script>

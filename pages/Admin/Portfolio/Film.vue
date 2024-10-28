@@ -39,10 +39,10 @@
 
 					<div class="col-md-3">
 						<button
+							v-if="selectedDepartmentIndex !== null"
 							class="btn btn-danger"
 							type="button"
 							@click="deleteDepartment"
-							v-if="selectedDepartmentIndex !== null"
 						>
 							Delete Department
 						</button>
@@ -50,7 +50,7 @@
 				</div>
 
 				<!-- Movie selection -->
-				<div class="row" v-if="selectedDepartmentIndex !== null">
+				<div v-if="selectedDepartmentIndex !== null" class="row">
 					<div class="col-md-3">
 						<label for="movie-select">Select Movie:</label>
 					</div>
@@ -81,10 +81,10 @@
 
 					<div class="col-md-3">
 						<button
+							v-if="selectedMovieIndex !== null"
 							class="btn btn-danger"
 							type="button"
 							@click="deleteMovie"
-							v-if="selectedMovieIndex !== null"
 						>
 							Delete Movie
 						</button>
@@ -103,8 +103,8 @@
 						</div>
 						<div class="col-md-8">
 							<input
-								type="text"
 								v-model="selectedMovie.Name"
+								type="text"
 								style="width: inherit"
 							/>
 						</div>
@@ -115,8 +115,8 @@
 						</div>
 						<div class="col-md-8">
 							<input
-								type="text"
 								v-model="selectedMovie.Link"
+								type="text"
 								style="width: inherit"
 							/>
 						</div>
@@ -137,8 +137,8 @@
 								<div class="col">
 									<input type="file" @change="onFileChange" />
 									<input
-										type="text"
 										v-model="selectedMovie.Image"
+										type="text"
 										style="width: inherit"
 									/>
 								</div>
@@ -151,8 +151,8 @@
 						</div>
 						<div class="col-md-8">
 							<input
-								type="text"
 								v-model="selectedMovie.Years"
+								type="text"
 								style="width: inherit"
 							/>
 						</div>
@@ -191,8 +191,8 @@
 							</div>
 							<div class="col-md-4">
 								<input
-									type="text"
 									v-model="selectedMovie.Photos[photoIndex]"
+									type="text"
 									style="width: inherit"
 								/>
 							</div>
@@ -283,6 +283,11 @@ export default {
 			// Reset selected movie when department changes
 			this.selectedMovieIndex = 0
 		},
+	},
+	mounted() {
+		this.selectedDepartmentIndex = 0
+		this.selectedMovieIndex = 0
+		// console.log('Mounted Film page', this.departments)
 	},
 	methods: {
 		...mapActions(useDepartmentStore, [
@@ -391,11 +396,6 @@ export default {
 					alert('Failed to save all departments.')
 				})
 		},
-	},
-	mounted() {
-		this.selectedDepartmentIndex = 0
-		this.selectedMovieIndex = 0
-		// console.log('Mounted Film page', this.departments)
 	},
 }
 </script>

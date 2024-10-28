@@ -12,6 +12,9 @@
 <script>
 import Gallery from '~/components/Gallery.vue'
 export default {
+	components: {
+		appGallery: Gallery,
+	},
 	data() {
 		return {
 			memorabilia: {
@@ -21,9 +24,6 @@ export default {
 				notes: "Jimmy's personal set from x-men 1, check back often for more information.",
 			},
 		}
-	},
-	components: {
-		appGallery: Gallery,
 	},
 }
 </script>

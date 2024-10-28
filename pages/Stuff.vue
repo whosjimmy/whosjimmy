@@ -8,6 +8,9 @@
 import Gallery from '~/components/Gallery.vue'
 
 export default {
+	components: {
+		appGallery: Gallery,
+	},
 	data() {
 		return {
 			cover: '/stuff/cars/117-1768_IMG.JPG',
@@ -19,9 +22,6 @@ export default {
 			],
 			info: ['Cars', 'Neat cars come across and/or owned.'],
 		}
-	},
-	components: {
-		appGallery: Gallery,
 	},
 }
 </script>

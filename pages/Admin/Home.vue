@@ -5,7 +5,7 @@
 				<h1>Admin</h1>
 			</div>
 			<div class="col-md-12">
-				<input type="text" v-model="image" />
+				<input v-model="image" type="text" />
 			</div>
 			<div class="col-md-12">
 				<img :src="general[0]?.cover" />
@@ -37,6 +37,14 @@ export default {
 	computed: {
 		...mapState(useGeneralStore, ['general']),
 	},
+	mounted() {
+		console.log('Mounted Home page')
+		// console.log(this.general[0])
+		// console.log('this.getGeneral[0]', this.getGeneral[0])
+		this.image =
+			this.general[0].cover ||
+			'https://firebasestorage.googleapis.com/v0/b/who-s-jimmy.appspot.com/o/general%2Fcover%2FJIMMY_CLAWS.jpg?alt=media&token=95eb5710-bb73-4de5-b635-d0e5a4937889'
+	},
 	methods: {
 		...mapActions(useGeneralStore, ['saveGeneralItem']),
 		// async saveImage() {
@@ -55,21 +63,13 @@ export default {
 						file,
 						`general/${type}/${file.name}`
 					)
-					// this.selectedMovie.Photos.push(url)
+					this.selectedMovie.Photos.push(url)
 					this.saveGeneralItem('test')
 				} catch (error) {
 					console.error('Error uploading photo:', error)
 				}
 			}
 		},
-	},
-	mounted() {
-		console.log('Mounted Home page')
-		// console.log(this.general[0])
-		// console.log('this.getGeneral[0]', this.getGeneral[0])
-		this.image =
-			this.general[0].cover ||
-			'https://firebasestorage.googleapis.com/v0/b/who-s-jimmy.appspot.com/o/general%2Fcover%2FJIMMY_CLAWS.jpg?alt=media&token=95eb5710-bb73-4de5-b635-d0e5a4937889'
 	},
 }
 </script>

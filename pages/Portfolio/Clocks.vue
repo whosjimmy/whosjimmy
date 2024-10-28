@@ -21,6 +21,9 @@
 <script>
 import Gallery from '~/components/Gallery.vue'
 export default {
+	components: {
+		appGallery: Gallery,
+	},
 	data() {
 		return {
 			clocks: [
@@ -126,9 +129,6 @@ export default {
 				},
 			],
 		}
-	},
-	components: {
-		appGallery: Gallery,
 	},
 }
 </script>

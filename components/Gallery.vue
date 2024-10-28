@@ -29,13 +29,6 @@ export default {
 	components: {
 		Modal,
 	},
-	data() {
-		return {
-			show: false,
-			index: 0,
-			image: this.images[0],
-		}
-	},
 	props: {
 		name: {
 			type: String,
@@ -62,6 +55,13 @@ export default {
 				return []
 			},
 		},
+	},
+	data() {
+		return {
+			show: false,
+			index: 0,
+			image: this.images[0],
+		}
 	},
 	mounted() {},
 	methods: {

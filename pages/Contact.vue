@@ -131,7 +131,7 @@ export default {
 						subject: this.subject,
 						message: this.message,
 					})
-					.then((response) => {
+					.then((_response) => {
 						// this.sucessfulServerResponse = response.data.message;
 						this.sucessfulServerResponse = 'Message Sent to Jimmy!'
 						this.serverError = ''

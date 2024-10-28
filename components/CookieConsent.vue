@@ -1,5 +1,5 @@
 <template>
-	<div class="cookie-consent" v-if="!isChecked">
+	<div v-if="!isChecked" class="cookie-consent">
 		<p>
 			This website uses cookies to ensure you get the best experience on
 			our website.
@@ -7,8 +7,8 @@
 		<div class="row">
 			<div class="col text-right">
 				<input
-					type="checkbox"
 					id="functionalCookies"
+					type="checkbox"
 					disabled
 					checked
 				/>
@@ -16,9 +16,9 @@
 			</div>
 			<div class="col text-left">
 				<input
-					type="checkbox"
 					id="trackingCookies"
 					v-model="isCheckedTracking"
+					type="checkbox"
 				/>
 				<label for="trackingCookies">Tracking</label>
 			</div>

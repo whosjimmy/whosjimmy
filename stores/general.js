@@ -61,8 +61,8 @@ export const useGeneralStore = defineStore('general', {
 			try {
 				const batch = writeBatch($firestore)
 				this.general.forEach((department) => {
-					const docRef = doc($firestore, 'general', general.id)
-					batch.set(docRef, general)
+					const docRef = doc($firestore, 'general', department.id)
+					batch.set(docRef, department)
 				})
 				await batch.commit()
 			} catch (error) {

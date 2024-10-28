@@ -13,6 +13,9 @@
 <script>
 import Gallery from '~/components/Gallery.vue'
 export default {
+	components: {
+		appGallery: Gallery,
+	},
 	data() {
 		return {
 			celebrities: [
@@ -76,9 +79,6 @@ export default {
 				},
 			],
 		}
-	},
-	components: {
-		appGallery: Gallery,
 	},
 }
 </script>

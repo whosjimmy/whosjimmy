@@ -8,6 +8,9 @@
 import Gallery from '~/components/Gallery.vue'
 
 export default {
+	components: {
+		appGallery: Gallery,
+	},
 	data() {
 		return {
 			cover: '/truck/feb6 2011 254.JPG',
@@ -22,9 +25,6 @@ export default {
 			],
 			info: ['Set truck on location devour set north vancouver'],
 		}
-	},
-	components: {
-		appGallery: Gallery,
 	},
 }
 </script>
