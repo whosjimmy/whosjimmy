@@ -30,7 +30,7 @@
 		"hooks": "yarn lintfix"
 	},
 	"dependencies": {
-		"@firebase/auth": "^1.7.8",
+		"@firebase/auth": "^1.8.0",
 		"@fortawesome/fontawesome-svg-core": "^6.6.0",
 		"@fortawesome/free-brands-svg-icons": "^6.6.0",
 		"@fortawesome/free-regular-svg-icons": "^6.5.2",
