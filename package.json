@@ -53,7 +53,7 @@
 		"eslint-plugin-nuxt": "^4.0.0",
 		"eslint-plugin-prettier": "^5.2.1",
 		"eslint-plugin-vue": "^9.31.0",
-		"firebase": "^11.0.1",
+		"firebase": "^11.0.2",
 		"nuxt": "^3.14.159",
 		"path": "^0.12.7",
 		"pinia-plugin-persistedstate": "^4.1.3",
