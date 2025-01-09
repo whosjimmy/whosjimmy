@@ -73,7 +73,7 @@
 		"cross-env": "^7.0.3",
 		"husky": "^9.1.7",
 		"globals": "^15.14.0",
-		"typescript": "5.7.2",
+		"typescript": "5.7.3",
 		"node-sass": "^9.0.0",
 		"sass": "^1.83.0",
 		"sass-loader": "^16.0.4"
