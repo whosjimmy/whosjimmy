@@ -1,3 +1,3 @@
--   move everything to the store
--   move everything to firebase with back up json's
--   add admin page for all data
+- move everything to the store
+- move everything to firebase with back up json's
+- add admin page for all data
