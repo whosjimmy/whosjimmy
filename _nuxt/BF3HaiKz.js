@@ -1,1 +1,0 @@
-import{E as e,_ as n,c as t,a as s,o as c}from"./mq0Fqflx.js";const r=e("/youtube-coming-soon.jpg"),a={};function i(l,o){return c(),t("div",null,o[0]||(o[0]=[s("img",{src:r},null,-1),s("div",null,"Coming soon!",-1)]))}const _=n(a,[["render",i]]);export{_ as default};
