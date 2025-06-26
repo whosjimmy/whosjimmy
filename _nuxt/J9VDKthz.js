@@ -1,1 +1,0 @@
-import{_ as o,c as n,i as c,F as r,G as s,o as _,b as a}from"./ClNZl-Gc.js";const i={};function l(d,t){const e=s;return _(),n("div",null,[c(e,{to:"/Admin/Portfolio/Film"},{default:r(()=>t[0]||(t[0]=[a("Film")])),_:1})])}const f=o(i,[["render",l]]);export{f as default};
