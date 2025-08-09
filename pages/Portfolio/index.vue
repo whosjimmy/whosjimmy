@@ -57,10 +57,10 @@ export default {
 				},
 				{
 					link: '/Portfolio/Videos',
-					image: '/youtube-coming-soon.jpg',
-					alt: 'Instructional Videos   Coming Soon',
-					title: 'Instructional Videos   Coming Soon',
-					name: 'Instructional Videos   Coming Soon',
+					image: '/channels4_profile.jpg',
+					alt: "Jimmy's Lampegoid",
+					title: "Jimmy's Lampegoid",
+					name: "Jimmy's Lampegoid",
 				},
 			],
 		}
