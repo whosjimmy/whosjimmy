@@ -1,1 +1,0 @@
-import{_ as o,c as n,i as _,F as c,G as r,o as s,b as a}from"./yzssbziQ.js";const i={};function l(d,t){const e=r;return s(),n("div",null,[_(e,{to:"/Admin/Portfolio/Film"},{default:c(()=>t[0]||(t[0]=[a("Film")])),_:1,__:[0]})])}const f=o(i,[["render",l]]);export{f as default};
