@@ -17,14 +17,19 @@
 
 <script setup lang="ts">
 import type { NuxtError } from '#app'
-const props: any = defineProps({
-	error: Object as () => NuxtError,
-})
+
+// Properly typed props interface
+interface Props {
+	error?: NuxtError
+}
+
+const props = defineProps<Props>()
 const { $config } = useNuxtApp()
 
 useHead({
-	title: props?.error?.statusCode.toString() || 'Error',
+	title: props?.error?.statusCode?.toString() || 'Error',
 })
+
 const handleError = () => {
 	useHead({
 		title: $config.public.SITE_TITLE,
@@ -36,6 +41,7 @@ const handleError = () => {
 <script lang="ts">
 import Header from '~/components/Header.vue'
 import Footer from './components/Footer.vue'
+
 export default {
 	components: {
 		appHeader: Header,
