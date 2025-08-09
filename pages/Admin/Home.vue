@@ -37,10 +37,7 @@ export default {
 	computed: {
 		...mapState(useGeneralStore, ['general']),
 	},
-	mounted() {
-		console.log('Mounted Home page')
-		// console.log(this.general[0])
-		// console.log('this.getGeneral[0]', this.getGeneral[0])
+	mounted() { 
 		this.image =
 			this.general[0].cover ||
 			'https://firebasestorage.googleapis.com/v0/b/who-s-jimmy.appspot.com/o/general%2Fcover%2FJIMMY_CLAWS.jpg?alt=media&token=95eb5710-bb73-4de5-b635-d0e5a4937889'

@@ -56,6 +56,7 @@ export default {
 			},
 		},
 	},
+	emits: ['gallery-opened', 'gallery-closed'], // Add this line
 	data() {
 		return {
 			show: false,
@@ -79,12 +80,14 @@ export default {
 					event: 'gallery-closed',
 					name: this.name,
 				})
+				this.$emit('gallery-closed') // Add this line
 			} else {
 				this.$gtm.push({
 					event: 'gallery-opened',
 					page_path: this.$route.path,
 					name: this.name,
 				})
+				this.$emit('gallery-opened', this.name) // Add this line
 			}
 			this.show = !this.show
 		},
