@@ -19,7 +19,7 @@
       //- a.pin-ic 
       //-   fab.mr-2.ml-2.fa-2x(:icon="['fab', 'pinterest']")
     .footer-copyright.text-center.font-small
-      div © 2024 Copyright: 
+      div © 2025 Copyright: 
         a(href="http://whosjimmy.com/") WhosJimmy.com
       div Disclaimer: All images are copyright to their respective owners.
       div A 
