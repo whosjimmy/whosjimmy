@@ -67,7 +67,7 @@
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^8.35.0",
-		"@typescript-eslint/parser": "^8.38.0",
+		"@typescript-eslint/parser": "^8.39.1",
 		"@nuxtjs/eslint-module": "^4.1.0",
 		"@types/bootstrap": "^5.2.10",
 		"cross-env": "^7.0.3",
