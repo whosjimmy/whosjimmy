@@ -56,7 +56,7 @@
 		"firebase": "^12.0.0",
 		"nuxt": "^3.17.7",
 		"path": "^0.12.7",
-		"pinia-plugin-persistedstate": "^4.4.1",
+		"pinia-plugin-persistedstate": "^4.5.0",
 		"prettier": "^3.6.2",
 		"pug": "^3.0.2",
 		"pug-plain-loader": "^1.1.0",
