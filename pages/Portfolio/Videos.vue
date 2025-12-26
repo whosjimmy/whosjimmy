@@ -8,6 +8,7 @@
 
 		<div v-else-if="error" class="error">
 			Error loading videos: {{ error }}
+			<button class="btn" @click="fetchVideos">Retry</button>
 		</div>
 
 		<div v-else class="videos-grid">
