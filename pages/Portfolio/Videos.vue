@@ -688,10 +688,14 @@ export default {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-	.video-modal {
-		margin: 20px;
-		max-width: calc(100vw - 40px);
-		max-height: calc(100vh - 40px);
+	.video-modal.is-expanded {
+		top: 50% !important;
+		left: 50% !important;
+		transform: translate(-50%, -50%);
+		width: 95vw !important;
+		height: 85vh !important;
+		max-width: 95vw;
+		max-height: 85vh;
 	}
 
 	.modal-video-info {
