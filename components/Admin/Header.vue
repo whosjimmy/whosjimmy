@@ -17,6 +17,11 @@ div
         nuxt-link.btn.btn-light.nav-item(
           tag="li",
           activeClass="active",
+          to="/Admin/Users")
+          | Users
+        nuxt-link.btn.btn-light.nav-item(
+          tag="li",
+          activeClass="active",
           to="/Admin/Bio")
           | Bio
         nuxt-link.btn.btn-light.nav-item(
@@ -85,12 +90,14 @@ export default {
 		return {
 			visible: false,
 			isAuth: false,
+			isAdmin: false,
 		}
 	},
 	computed: {
 		...mapState(useAuthStore, {
 			user: 'getUser',
 			isAuthenticated: 'isAuthenticated',
+			getIsAdmin: 'getIsAdmin',
 		}),
 	},
 	watch: {
@@ -100,6 +107,11 @@ export default {
 	},
 	mounted() {
 		this.isAuth = this.isAuthenticated
+		this.isAdmin = this.getIsAdmin
+
+		if (!this.isAdmin) {
+			this.$router.replace('/login')
+		}
 	},
 
 	methods: {

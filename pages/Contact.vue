@@ -118,7 +118,7 @@ export default {
 		},
 		submit() {
 			this.v$.$touch()
-			this.resetMessages
+			this.resetMessages()
 			this.v$.$touch()
 			if (this.v$.$invalid) {
 				console.error('error')
@@ -140,7 +140,7 @@ export default {
 					.catch((err) => {
 						this.serverError = getErrorMessage(err)
 						console.error(this.serverError)
-						if ((this.serverError = '"int(200)\n"')) {
+						if (this.serverError === '"int(200)\n"') {
 							this.serverError = 'Form Error'
 						}
 						this.sucessfulServerResponse = ''

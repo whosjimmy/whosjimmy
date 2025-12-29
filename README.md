@@ -1,4 +1,4 @@
-# Whos-Jimmy
+# Who's Jimmy
 
 > Personal website
 

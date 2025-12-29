@@ -72,5 +72,6 @@ export const useGeneralStore = defineStore('general', {
 	},
 	getters: {
 		getGeneral: (state) => state.general,
+		getBio: (state) => state.general['bio'],
 	},
 })

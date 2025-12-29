@@ -1,6 +1,11 @@
 export default defineNuxtConfig({
-	// ssr: false,
-	// target: 'static', // default is 'server'
+	typescript: {
+		strict: true,
+		typeCheck: true,
+	},
+	imports: {
+		autoImport: true,
+	},
 	runtimeConfig: {
 		public: {
 			FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
@@ -15,13 +20,13 @@ export default defineNuxtConfig({
 			GOOGLE_TAG_MANAGER_ENABLED: process.env.GOOGLE_TAG_MANAGER_ENABLED,
 			GOOGLE_TAG_MANAGER_DEBUG: process.env.GOOGLE_TAG_MANAGER_DEBUG,
 			SITE_TITLE: process.env.SITE_TITLE,
+			// YouTube API Configuration
+			YOUTUBE_API_KEY: process.env.YOUTUBE_API_KEY,
+			YOUTUBE_CHANNEL_ID: process.env.YOUTUBE_CHANNEL_ID,
 		},
 	},
 	app: {
 		pageTransition: { name: 'page', mode: 'out-in' },
-		/*
-		 ** Headers of the page
-		 */
 		head: {
 			title: process.env.SITE_TITLE || "Who's Jimmy",
 			meta: [
@@ -69,41 +74,7 @@ export default defineNuxtConfig({
 		'@fortawesome/fontawesome-svg-core/styles.css',
 		'~/assets/styles/main.scss',
 	],
-	/*
-	 ** Plugins to load before mounting the App
-	 */
-
 	plugins: ['~/plugins/firebase.js'],
-	/*
-	 ** Nuxt.js modules
-	 */
-	// modules: ['@pinia/nuxt'],
-	/*
-	 ** Build configuration
-	 */
-	auth: {
-		middleware: ['~/middleware/auth.js'],
-		cookie: {
-			prefix: 'auth.',
-		},
-		localStorage: {
-			prefix: 'auth.',
-		},
-		strategies: {
-			local: {
-				token: {
-					property: 'token',
-					global: true,
-					required: true,
-					type: 'Bearer',
-				},
-				user: {
-					property: 'user',
-					autoFetch: true,
-				},
-			},
-		},
-	},
 	build: { transpile: ['@fortawesome/vue-fontawesome'] },
 	compatibilityDate: '2024-07-22',
 })
