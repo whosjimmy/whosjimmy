@@ -1,0 +1,1 @@
+import{ad as r,u as o,ae as a}from"./DsRIpS39.js";const n=r((e,u)=>{const t=o();if(!t.user&&e.path!=="/login")return a("/login");if(t.user&&e.path==="/login")return a("/admin")});export{n as default};
