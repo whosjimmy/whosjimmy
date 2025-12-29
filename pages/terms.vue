@@ -32,9 +32,5 @@
 				the use or inability to use this service.
 			</p>
 		</section>
-
-		<section class="mb-8 text-center text-sm text-gray-400 border-t pt-6">
-			&copy; 2025 Johnston Software Development. All rights reserved.
-		</section>
 	</div>
 </template>

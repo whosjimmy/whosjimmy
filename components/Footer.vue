@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template lang="pug">
   footer.page-footer.font-small.bg-light.navbar-fixed-bottom
     .container
@@ -22,9 +24,12 @@
       div © 2025 Copyright: 
         a(href="http://whosjimmy.com/") WhosJimmy.com
       div Disclaimer: All images are copyright to their respective owners.
-      div A 
+      div
+        nuxt-link.text-white(:to="{name: 'Terms'}") Terms
+        | A 
         a(href="http://JohnstonSoftwareDevelopment.ca" target="_blank") JSD
         |  creation.
+        nuxt-link.text-white(:to="{name: 'Privacy'}") Privacy
   </template>
 
 <style scoped>

@@ -40,17 +40,5 @@
 				service or if required by law.
 			</p>
 		</section>
-
-		<section class="mb-8">
-			<h2 class="text-xl font-semibold mb-3">4. Contact Us</h2>
-			<p>
-				If you have questions, contact Derek at
-				<a
-					href="mailto:Derek@JohnstonSoftwareDevelopment.ca"
-					class="text-blue-600"
-					>Derek@JohnstonSoftwareDevelopment.ca</a
-				>.
-			</p>
-		</section>
 	</div>
 </template>
