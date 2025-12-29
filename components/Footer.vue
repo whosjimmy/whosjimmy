@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template lang="pug">
   footer.page-footer.font-small.bg-light.navbar-fixed-bottom
     .container
