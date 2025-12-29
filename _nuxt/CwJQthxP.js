@@ -1,1 +1,0 @@
-import{_ as o,c as n,l as _,K as c,L as r,o as s,h as a}from"./DsRIpS39.js";const i={};function l(d,t){const e=r;return s(),n("div",null,[_(e,{to:"/Admin/Portfolio/Film"},{default:c(()=>t[0]||(t[0]=[a("Film",-1)])),_:1,__:[0]})])}const f=o(i,[["render",l]]);export{f as default};
