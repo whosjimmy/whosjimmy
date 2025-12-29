@@ -793,7 +793,7 @@ onMounted(() => {
 }
 
 .modal {
-    display: flex;
+	display: flex;
 	background: white;
 	border-radius: 16px;
 	padding: 32px;
